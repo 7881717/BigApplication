@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_width">328dp</dimen>
+    <dimen name="titleText">24sp</dimen>
+    <dimen name="smallText">12sp</dimen>
+    <dimen name="editText">18sp</dimen>
+    <dimen name="buttonText">16sp</dimen>
+    <dimen name="mediumText">14sp</dimen>
+</resources>
