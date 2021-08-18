@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".LoggedActivity">
 
     <View
@@ -167,7 +166,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button5"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="328dp"
+        android:layout_marginStart="@dimen/general_side_margin"
+        android:layout_marginEnd="@dimen/general_side_margin"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:textColor="@color/black"
@@ -185,7 +186,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button6"
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="328dp"
+        android:layout_marginStart="@dimen/general_side_margin"
+        android:layout_marginEnd="@dimen/general_side_margin"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:textColor="@color/white"
