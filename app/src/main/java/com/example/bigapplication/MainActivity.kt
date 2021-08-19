@@ -19,20 +19,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Login button
-        val vButton0 = findViewById<View>(R.id.button0) as Button
-        vButton0.setOnClickListener {
-
-            // validation flags
-            var emailCorrect = false
-            var passwordCorrect = false
-
-            val pair = mailAndPasswordValidator(emailCorrect, passwordCorrect)
-            emailCorrect = pair.first
-            passwordCorrect = pair.second
+        val buttonLogin = findViewById<View>(R.id.btnLogin) as Button
+        buttonLogin.setOnClickListener {
 
             // data for next activity
-            val nameText = findViewById<EditText>(R.id.tv_email_edit)
-            val pwdText = findViewById<EditText>(R.id.tv_password_edit)
+            val nameText = findViewById<EditText>(R.id.etEmail)
+            val pwdText = findViewById<EditText>(R.id.etPassword)
 
 
             val userName = nameText.text.toString()
@@ -45,19 +37,19 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Userpassword", userPassword)
 
             // Logged Activity start
-            if (emailCorrect && passwordCorrect) startActivity(intent)
+            if (emailChecker() && passwordChecker()) startActivity(intent)
         }
 
-        val vlink0 = findViewById<View>(R.id.tv_link_forgot_password) as TextView
-        vlink0.setOnClickListener {
+        val forgotPassword = findViewById<View>(R.id.tvForgotPassword) as TextView
+        forgotPassword.setOnClickListener {
 
             // Restore Activity start
             val intent = Intent(this, RestoreActivity::class.java)
             startActivity(intent)
         }
 
-        val vlink1 = findViewById<View>(R.id.tv_link_sign_up) as TextView
-        vlink1.setOnClickListener {
+        val signUp = findViewById<View>(R.id.tvSignUp) as TextView
+        signUp.setOnClickListener {
 
             // Auth Activity start
             val intent = Intent(this, AuthActivity::class.java)
@@ -66,50 +58,40 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun mailAndPasswordValidator(
-        emailCorrect: Boolean,
-        passwordCorrect: Boolean
-    ): Pair<Boolean, Boolean> {
-        var emailCorrect1 = emailCorrect
-        var passwordCorrect1 = passwordCorrect
-        val emailValidate = findViewById<View>(R.id.tv_email_edit) as EditText
+    private fun emailChecker(): Boolean {
+        // validation flag
+        var emailCorrect = false
 
-        val textView = findViewById<View>(R.id.tv_email_verify) as TextView
-
+        val emailValidate = findViewById<View>(R.id.etEmail) as EditText
         val email = emailValidate.text.toString().trim { it <= ' ' }
-
         // email regex
         val emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
-        // validator function
-        fun isEmailValid(email: String): Boolean {
-            return emailRegex.toRegex().matches(email)
-        }
-
         // email check
-        if (isEmailValid(email)) {
-            emailCorrect1 = true
-            textView.text = " "
+        if (emailRegex.toRegex().matches(email)) {
+            emailCorrect = true
         } else {
             // wrong email message
-            textView.text = getString(R.string.invalid_email)
+            emailValidate.error = getString(R.string.invalid_email)
         }
+        return emailCorrect
+    }
 
-        val passwordValidate = findViewById<View>(R.id.tv_password_edit) as EditText
+    private fun passwordChecker(): Boolean {
+        // validation flag
+        var passwordCorrect = false
 
-        val textView1 = findViewById<View>(R.id.tv_password_verify) as TextView
-
+        val passwordValidate = findViewById<View>(R.id.etPassword) as EditText
         val password = passwordValidate.text.toString()
 
         // password check
         if (password.length > 7) {
-            textView1.text = " "
-            passwordCorrect1 = true
+            passwordCorrect = true
         } else {
             // invalid password message
-            textView1.text = getString(R.string.invalid_password)
+            passwordValidate.error = getString(R.string.invalid_password)
         }
-        return Pair(emailCorrect1, passwordCorrect1)
+        return passwordCorrect
     }
 
 }
