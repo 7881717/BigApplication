@@ -21,11 +21,11 @@ class LoggedActivity : AppCompatActivity() {
         val intent = intent
 
         // data from previous activity
-        val fName = intent.getStringExtra("Username")
-        val lName = intent.getStringExtra("Userpassword")
+        val userEmail = intent.getStringExtra("Useremail")
+        val userPassword = intent.getStringExtra("Userpassword")
 
         // first name parser
-        val preName = fName?.substringBefore("@")
+        val preName = userEmail?.substringBefore("@")
         val first = preName?.substringBefore('.')
             ?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault())
             else it.toString() }
@@ -37,7 +37,8 @@ class LoggedActivity : AppCompatActivity() {
             else it.toString() }
 
         // show parsed names
-        tvView!!.text = "$first $last"
+        val toShow = "$first $last"
+        tvView?.text = toShow
 
     }
 }

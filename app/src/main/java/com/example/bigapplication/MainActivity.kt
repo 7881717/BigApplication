@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity() {
             val pwdText = findViewById<EditText>(R.id.etPassword)
 
 
-            val userName = nameText.text.toString()
+            val userEmail = nameText.text.toString()
             val userPassword = pwdText.text.toString()
 
 
             val intent = Intent(this, LoggedActivity::class.java)
 
-            intent.putExtra("Username", userName)
+            intent.putExtra("Useremail", userEmail)
             intent.putExtra("Userpassword", userPassword)
 
             // Logged Activity start
