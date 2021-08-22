@@ -34,18 +34,19 @@
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:layout_marginStart="@dimen/general_side_margin"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.1"
         />
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="@dimen/additional_side_margin"
+        android:layout_width="@dimen/iconLogged"
+        android:layout_height="@dimen/iconLogged"
         app:layout_constraintTop_toBottomOf="@id/tvLoggedTitle"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/vladround"
-        android:contentDescription="@string/user_photo" />
+        android:contentDescription="@string/user_photo"
+        app:layout_constraintVertical_weight="0.1"/>
 
     <TextView
         android:id="@+id/tvUserName"
@@ -53,154 +54,109 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="@dimen/editText"
-        app:layout_constraintBottom_toBottomOf="@id/tvTopBackground"
-        android:layout_marginBottom="@dimen/max_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
 
     <TextView
-        android:id="@+id/tv_log2"
+        android:id="@+id/tvUserJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/android_trainee"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/mediumText"
         app:layout_constraintTop_toBottomOf="@id/tvUserName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
-        android:id="@+id/tv_log3"
+        android:id="@+id/tvUserAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_5295_gladiator_walks_apk_110"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/mediumText"
-        app:layout_constraintTop_toBottomOf="@id/tv_log2"
+        app:layout_constraintTop_toBottomOf="@id/tvUserJob"
         android:layout_marginTop="@dimen/item_vertical_margin"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button2"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:textColor="@color/orange"
-        app:cornerRadius="30dp"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="3dp"
-        android:textSize="30dp"
-        android:text="@string/f"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@id/tvBottomBackground"
-        app:layout_constraintStart_toStartOf="@id/button5"
-        android:layout_marginBottom="180dp"
-        android:layout_marginStart="40dp"
-        android:padding="0dp"
-        app:iconPadding="0dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        tools:ignore="SpUsage" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button3"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:textColor="@color/orange"
-        app:cornerRadius="30dp"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="3dp"
-        android:textSize="30dp"
-        android:text="@string/in"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@id/tvBottomBackground"
+    <ImageView
+        android:id="@+id/socialFacebook"
+        android:contentDescription="@string/facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_f"
+        app:layout_constraintTop_toTopOf="@id/socialLinkedin"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/additional_side_margin"/>
+
+    <ImageView
+        android:id="@+id/socialLinkedin"
+        android:contentDescription="@string/linkedin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_in"
+        app:layout_constraintTop_toTopOf="@id/tvBottomBackground"
+        android:layout_marginTop="@dimen/big_vertical_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/socialVKontakte"
+        android:contentDescription="@string/vkontakte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_vk"
+        app:layout_constraintTop_toTopOf="@id/socialLinkedin"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="180dp"
-        android:padding="0dp"
-        app:iconPadding="0dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        tools:ignore="SpUsage" />
+        android:layout_marginEnd="@dimen/additional_side_margin"/>
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button4"
+        android:id="@+id/buttonEditProfile"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="180dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        android:padding="0dp"
-        android:textAllCaps="false"
-        android:textColor="@color/orange"
-        app:cornerRadius="30dp"
-        app:icon="@drawable/vk700"
-        app:iconGravity="textEnd"
-        app:iconPadding="0dp"
-        app:iconSize="33dp"
-        app:layout_constraintBottom_toBottomOf="@id/tvBottomBackground"
-        app:layout_constraintEnd_toEndOf="@id/button5"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="3dp" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button5"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_marginStart="@dimen/general_side_margin"
-        android:layout_marginEnd="@dimen/general_side_margin"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        android:textColor="@color/black"
-        app:cornerRadius="8dp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="2dp"
-        android:textSize="@dimen/buttonText"
+        android:layout_marginStart="@dimen/general_side_margin"
+        android:layout_marginEnd="@dimen/general_side_margin"
         android:text="@string/edit_profile"
-        app:layout_constraintBottom_toTopOf="@id/button6"
+        android:textColor="@color/black"
+        android:textSize="@dimen/buttonText"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonViewMyContacts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button6"
+        android:id="@+id/buttonViewMyContacts"
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_marginStart="@dimen/general_side_margin"
-        android:layout_marginEnd="@dimen/general_side_margin"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:textColor="@color/white"
-        app:cornerRadius="8dp"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp"
-        android:textSize="@dimen/buttonText"
+        android:layout_marginStart="@dimen/general_side_margin"
+        android:layout_marginEnd="@dimen/general_side_margin"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
         android:text="@string/view_my_contacts"
+        android:textColor="@color/white"
+        android:textSize="@dimen/buttonText"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="@id/tvBottomBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/item_vertical_margin"
-        />
+        app:strokeColor="@color/orange"
+        app:strokeWidth="2dp"
+        tools:ignore="TextContrastCheck" />
 
 
 

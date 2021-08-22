@@ -6,7 +6,9 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:windowBackground">@color/dark_blue_magenta</item>
-b
+
+        <!-- Whole app font. -->
+        <item name="fontFamily">@font/open_sans</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/lightGray</item>
@@ -17,4 +19,6 @@ b
         <!-- Customize your theme here. -->
         <item name="android:textColor">@android:color/white</item>
     </style>
+
+
 </resources>

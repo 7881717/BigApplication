@@ -53,16 +53,17 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="@dimen/editText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:inputType="textEmailAddress"
+        android:autofillHints="e-mail"
         android:hint="@string/type_e_mail_here"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
         android:textColorHint="@color/lightGray"
-        android:autofillHints="e-mail" />
+        android:textSize="@dimen/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/tvPassword"
@@ -79,27 +80,29 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="@dimen/editText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:inputType="textPassword"
+        android:autofillHints="password"
         android:hint="@string/type_password_here"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
         android:textColorHint="@color/lightGray"
-        android:autofillHints="password" />
+        android:textSize="@dimen/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <CheckBox
         android:id="@+id/cbRememberMe"
         android:layout_width="126dp"
         android:layout_height="18dp"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/remember_me"
         android:textColor="@color/lightGray"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        android:textSize="@dimen/mediumText"
         app:layout_constraintLeft_toLeftOf="@id/etPassword"
-        android:layout_marginTop="@dimen/item_vertical_margin"
-        android:textSize="@dimen/mediumText" />
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <TextView

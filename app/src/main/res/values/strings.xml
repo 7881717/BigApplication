@@ -28,4 +28,7 @@
     <string name="invalid_email">Invalid e-mail address</string>
     <string name="invalid_password">Your password must be at least 8 characters long.</string>
     <string name="restore_your_password">Restore your password.</string>
+    <string name="vkontakte">Vkontakte</string>
+    <string name="facebook">Facebook</string>
+    <string name="linkedin">Linkedin</string>
 </resources>

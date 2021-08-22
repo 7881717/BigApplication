@@ -7,7 +7,7 @@
     tools:context=".RestoreActivity">
 
     <TextView
-        android:id="@+id/tv0"
+        android:id="@+id/tvRestoreTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/restore_your_password"
@@ -17,5 +17,37 @@
         android:layout_marginTop="@dimen/max_vertical_margin"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_f"
+        app:layout_constraintTop_toBottomOf="@id/tvRestoreTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
+        android:layout_marginStart="@dimen/additional_side_margin"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_in"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
+        android:layout_marginStart="@dimen/additional_side_margin"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_vk"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
+        android:layout_marginStart="@dimen/additional_side_margin"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

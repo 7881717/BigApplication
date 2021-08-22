@@ -58,7 +58,8 @@
         android:textSize="@dimen/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <TextView
@@ -84,7 +85,8 @@
         android:textSize="@dimen/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
     <CheckBox
@@ -96,7 +98,8 @@
         android:textColor="@color/lightGray"
         android:textSize="@dimen/mediumText"
         app:layout_constraintStart_toStartOf="@id/etPassword"
-        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"
