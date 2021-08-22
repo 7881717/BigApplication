@@ -34,19 +34,20 @@
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:layout_marginStart="@dimen/general_side_margin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="0.1"
         />
 
-    <ImageView
-        android:id="@+id/icon"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:contentDescription="@string/user_photo"
+        android:id="@+id/profileImage"
         android:layout_width="@dimen/iconLogged"
         android:layout_height="@dimen/iconLogged"
+        android:src="@drawable/vladface"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
         app:layout_constraintTop_toBottomOf="@id/tvLoggedTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/vladround"
-        android:contentDescription="@string/user_photo"
-        app:layout_constraintVertical_weight="0.1"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvUserName"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="@dimen/editText"
-        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
         android:layout_marginTop="@dimen/item_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
