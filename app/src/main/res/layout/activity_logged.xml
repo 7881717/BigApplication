@@ -88,17 +88,17 @@
 
 
     <ImageView
-        android:id="@+id/socialFacebook"
+        android:id="@+id/ivSocialFacebook"
         android:contentDescription="@string/facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_f"
-        app:layout_constraintTop_toTopOf="@id/socialLinkedin"
+        app:layout_constraintTop_toTopOf="@id/ivSocialLinkedin"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="@dimen/additional_side_margin"/>
 
     <ImageView
-        android:id="@+id/socialLinkedin"
+        android:id="@+id/ivSocialLinkedin"
         android:contentDescription="@string/linkedin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,12 +109,12 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
-        android:id="@+id/socialVKontakte"
+        android:id="@+id/ivSocialVKontakte"
         android:contentDescription="@string/vkontakte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_vk"
-        app:layout_constraintTop_toTopOf="@id/socialLinkedin"
+        app:layout_constraintTop_toTopOf="@id/ivSocialLinkedin"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="@dimen/additional_side_margin"/>
 
