@@ -9,5 +9,7 @@
     <dimen name="item_vertical_margin">20dp</dimen>
     <dimen name="additional_side_margin">49dp</dimen>
     <dimen name="big_vertical_margin">50dp</dimen>
+    <dimen name="max_vertical_margin">80dp</dimen>
 
+    <item name="guideline_weight" type="dimen" format="float">0.2</item>
 </resources>

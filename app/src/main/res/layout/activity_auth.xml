@@ -8,37 +8,43 @@
     android:layout_marginEnd="@dimen/general_side_margin"
     tools:context=".AuthActivity">
 
-    <TextView
-        android:id="@+id/tv_hello2"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineAuthHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guideline_weight" />
+
+    <TextView
+        android:id="@+id/tvAuthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/let_s_get_acquainted"
         android:textSize="@dimen/titleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guidelineAuthHorizontal" />
 
     <TextView
-        android:id="@+id/tv_hello3"
+        android:id="@+id/tvAuthTitleDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fill_out_the_profile_and"
         android:textSize="@dimen/smallText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_hello2" />
+        app:layout_constraintTop_toBottomOf="@id/tvAuthTitle" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="@dimen/big_vertical_margin"
         android:text="@string/e_mail"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/smallText"
-        app:layout_constraintLeft_toLeftOf="@id/etEmail"
-        app:layout_constraintTop_toBottomOf="@id/tv_hello3" />
+        app:layout_constraintStart_toStartOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/tvAuthTitleDescriptor" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -51,7 +57,6 @@
         android:textColorHint="@color/lightGray"
         android:textSize="@dimen/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEmail" />
 
@@ -60,7 +65,7 @@
         android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/password"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/smallText"
@@ -78,34 +83,32 @@
         android:textColorHint="@color/lightGray"
         android:textSize="@dimen/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvPassword" />
 
 
     <CheckBox
         android:id="@+id/cbRememberMe"
-        android:layout_width="126dp"
-        android:layout_height="18dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_vertical_margin"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/remember_me"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/mediumText"
-        app:layout_constraintLeft_toLeftOf="@id/etPassword"
+        app:layout_constraintStart_toStartOf="@id/etPassword"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button1"
+        android:id="@+id/buttonRegister"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="80dp"
         android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="@dimen/buttonText"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvAgreeTC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/orange"
@@ -113,38 +116,44 @@
 
 
     <TextView
-        android:id="@+id/tv_you_agree"
+        android:id="@+id/tvAgreeTC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/by_clicking_register_you"
         android:textSize="@dimen/smallText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/button1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button1" />
+        app:layout_constraintBottom_toBottomOf="@id/barrierAuth"
+        android:layout_marginBottom="@dimen/item_vertical_margin"/>
 
-
-    <TextView
-        android:id="@+id/tv_link_login_invite"
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierAuth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="10dp"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="tvLogin,tvLoginDescriptor" />
+
+    <TextView
+        android:id="@+id/tvLoginDescriptor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/already_have_an_account"
         android:textColor="@color/lightGray"
         android:textSize="@dimen/mediumText"
-        app:layout_constraintLeft_toLeftOf="@id/tv_you_agree"
-        app:layout_constraintTop_toBottomOf="@id/tv_you_agree" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
+        android:layout_marginStart="@dimen/additional_side_margin"/>
 
     <TextView
-        android:id="@+id/tv_link_login"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="49dp"
+        android:layout_marginEnd="@dimen/additional_side_margin"
         android:text="@string/sign_in"
         android:textSize="@dimen/mediumText"
-        app:layout_constraintRight_toRightOf="@id/button1"
-        app:layout_constraintTop_toTopOf="@id/tv_link_login_invite" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvLoginDescriptor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,11 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineHorizontal"
+        android:id="@+id/guidelineMainHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="@dimen/guideline_weight" />
 
     <TextView
         android:id="@+id/tvMainTitle"
@@ -21,13 +21,13 @@
         android:layout_height="wrap_content"
         android:text="@string/hello"
         android:textSize="@dimen/titleText"
-        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal"
+        app:layout_constraintTop_toTopOf="@id/guidelineMainHorizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
-        android:id="@+id/tvMainTitleDescription"
+        android:id="@+id/tvMainTitleDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enter_your_email_and"
@@ -45,7 +45,7 @@
         android:textColor="@color/lightGray"
         android:textSize="@dimen/smallText"
         app:layout_constraintLeft_toLeftOf="@id/etEmail"
-        app:layout_constraintTop_toBottomOf="@id/tvMainTitleDescription"
+        app:layout_constraintTop_toBottomOf="@id/tvMainTitleDescriptor"
         android:layout_marginTop="@dimen/big_vertical_margin"
         />
 
@@ -108,11 +108,11 @@
         android:layout_height="wrap_content"
         android:text="@string/forgot_your_password"
         app:layout_constraintTop_toTopOf="@id/cbRememberMe"
-        app:layout_constraintRight_toRightOf="@id/etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/mediumText" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/buttonLogin"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -134,20 +134,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="tvSignUp,tvSignUpDescription" />
+        app:constraint_referenced_ids="tvSignUp,tvSignUpDescriptor" />
 
     <TextView
-        android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        app:layout_constraintBottom_toBottomOf="@id/tvSignUpDescription"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="@dimen/additional_side_margin"
-        android:textSize="@dimen/mediumText" />
-
-    <TextView
-        android:id="@+id/tvSignUpDescription"
+        android:id="@+id/tvSignUpDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/don_t_have_account"
@@ -156,6 +146,16 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/item_vertical_margin"
         android:layout_marginStart="@dimen/additional_side_margin"
+        android:textSize="@dimen/mediumText" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        app:layout_constraintBottom_toBottomOf="@id/tvSignUpDescriptor"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/additional_side_margin"
         android:textSize="@dimen/mediumText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

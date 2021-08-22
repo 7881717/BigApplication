@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Login button
-        val buttonLogin = findViewById<View>(R.id.btnLogin) as Button
+        val buttonLogin = findViewById<View>(R.id.buttonLogin) as Button
         buttonLogin.setOnClickListener {
 
             // data for next activity

@@ -16,7 +16,7 @@ class LoggedActivity : AppCompatActivity() {
         setContentView(R.layout.activity_logged)
 
 
-        tvView = findViewById<View>(R.id.tv_log1) as TextView
+        tvView = findViewById<View>(R.id.tvUserName) as TextView
 
         val intent = intent
 
