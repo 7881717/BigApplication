@@ -2,21 +2,18 @@ package com.example.bigapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-
-
-import android.view.View
+import com.example.bigapplication.databinding.ActivityLoggedBinding
 import java.util.*
 
 
 class LoggedActivity : AppCompatActivity() {
-    var tvView: TextView? = null
+
+    private lateinit var binding: ActivityLoggedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_logged)
+        binding = ActivityLoggedBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-        tvView = findViewById<View>(R.id.tvUserName) as TextView
 
         val intent = intent
 
@@ -38,7 +35,6 @@ class LoggedActivity : AppCompatActivity() {
 
         // show parsed names
         val toShow = "$first $last"
-        tvView?.text = toShow
-
+        binding.tvUserName.text = toShow
     }
 }
