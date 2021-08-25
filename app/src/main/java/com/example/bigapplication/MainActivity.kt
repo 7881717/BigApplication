@@ -4,56 +4,49 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
-
-
-import android.widget.EditText
+import com.example.bigapplication.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("CutPasteId")
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Login button
-        val buttonLogin = findViewById<View>(R.id.buttonLogin) as Button
-        buttonLogin.setOnClickListener {
+        binding.buttonLogin.setOnClickListener {
 
-            // data for next activity
-            val nameText = findViewById<EditText>(R.id.etEmail)
-            val pwdText = findViewById<EditText>(R.id.etPassword)
+            if (emailChecker() && passwordChecker()) {
+                val intent = Intent(this, LoggedActivity::class.java)
 
+                // data for next activity
+                intent.putExtra("Useremail", binding.etEmail.text.toString())
+                intent.putExtra("Userpassword", binding.etPassword.text.toString())
 
-            val userEmail = nameText.text.toString()
-            val userPassword = pwdText.text.toString()
-
-
-            val intent = Intent(this, LoggedActivity::class.java)
-
-            intent.putExtra("Useremail", userEmail)
-            intent.putExtra("Userpassword", userPassword)
-
-            // Logged Activity start
-            if (emailChecker() && passwordChecker()) startActivity(intent)
+                // Logged Activity start
+                startActivity(intent)
+                finish()
+            }
         }
 
-        val forgotPassword = findViewById<View>(R.id.tvForgotPassword) as TextView
-        forgotPassword.setOnClickListener {
+        // tap forgot password
+        binding.tvForgotPassword.setOnClickListener {
 
             // Restore Activity start
             val intent = Intent(this, RestoreActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
-        val signUp = findViewById<View>(R.id.tvSignUp) as TextView
-        signUp.setOnClickListener {
+        // tap sign up
+        binding.tvSignUp.setOnClickListener {
 
             // Auth Activity start
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
@@ -62,8 +55,7 @@ class MainActivity : AppCompatActivity() {
         // validation flag
         var emailCorrect = false
 
-        val emailValidate = findViewById<View>(R.id.etEmail) as EditText
-        val email = emailValidate.text.toString().trim { it <= ' ' }
+        val email = binding.etEmail.text.trim { it <= ' ' }
         // email regex
         val emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -72,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             emailCorrect = true
         } else {
             // wrong email message
-            emailValidate.error = getString(R.string.invalid_email)
+            binding.etEmail.error = getString(R.string.invalid_email)
         }
         return emailCorrect
     }
@@ -81,15 +73,14 @@ class MainActivity : AppCompatActivity() {
         // validation flag
         var passwordCorrect = false
 
-        val passwordValidate = findViewById<View>(R.id.etPassword) as EditText
-        val password = passwordValidate.text.toString()
+        val password = binding.etPassword.text
 
         // password check
         if (password.length > 7) {
             passwordCorrect = true
         } else {
             // invalid password message
-            passwordValidate.error = getString(R.string.invalid_password)
+            binding.etPassword.error = getString(R.string.invalid_password)
         }
         return passwordCorrect
     }
