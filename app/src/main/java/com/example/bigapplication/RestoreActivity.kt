@@ -11,4 +11,9 @@ class RestoreActivity : AppCompatActivity() {
 // nothing here
 
     }
+
+    override fun onDestroy() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name)
+        super.onDestroy()
+    }
 }
