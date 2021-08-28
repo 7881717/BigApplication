@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomRecyclerAdapter(private val names: List<String>) :
@@ -31,11 +30,13 @@ class CustomRecyclerAdapter(private val names: List<String>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        if (position % 5 == 0) holder.flagImageView?.setImageResource(R.drawable.argentina)
-        if (position % 5 == 1) holder.flagImageView?.setImageResource(R.drawable.brazilia)
-        if (position % 5 == 2) holder.flagImageView?.setImageResource(R.drawable.chile)
-        if (position % 5 == 3) holder.flagImageView?.setImageResource(R.drawable.columbia)
-        if (position % 5 == 4) holder.flagImageView?.setImageResource(R.drawable.uruguai)
+        when (position % 5) {
+            0 -> holder.flagImageView?.setImageResource(R.drawable.argentina)
+            1 -> holder.flagImageView?.setImageResource(R.drawable.brazilia)
+            2 -> holder.flagImageView?.setImageResource(R.drawable.chile)
+            3 -> holder.flagImageView?.setImageResource(R.drawable.columbia)
+            4 -> holder.flagImageView?.setImageResource(R.drawable.uruguai)
+        }
         holder.largeTextView?.text = names[position]
         holder.smallTextView?.text = "кот"
     }
