@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
         // Login button
         binding.buttonLogin.setOnClickListener {
 
-            if (emailChecker() && passwordChecker()) {
+            // cheat code for fast forward to next activity
+            val cheatCode = true
+            if (cheatCode || (emailChecker() && passwordChecker())) {
                 val intent = Intent(this, LoggedActivity::class.java)
 
                 // data for next activity

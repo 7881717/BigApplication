@@ -3,6 +3,6 @@
 выпилил метанитовский ресайклер, приложение ожило.
 попробовал ресайклер отсюда (приложение ничего не показало):
 https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example
-выпилил ресайклер со stackoverflow
+выпилил ресайклер со stackoverflow.
 код тут: https://github.com/7881717/BigApplication/tree/development
 план продолжить учёбу второго уровня.

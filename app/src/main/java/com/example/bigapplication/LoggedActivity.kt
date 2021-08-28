@@ -1,5 +1,6 @@
 package com.example.bigapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bigapplication.databinding.ActivityLoggedBinding
@@ -36,5 +37,16 @@ class LoggedActivity : AppCompatActivity() {
         // show parsed names
         val toShow = "$first $last"
         binding.tvUserName.text = toShow
+
+
+        binding.buttonViewMyContacts.setOnClickListener {
+
+                val intent = Intent(this, ContactsActivity::class.java)
+
+                // Contacts Activity start
+                startActivity(intent)
+                finish()
+
+        }
     }
 }
