@@ -1,4 +1,19 @@
 <resources>
+    <string-array name="cat_names">
+        <item>Рыжик</item>
+        <item>Барсик</item>
+        <item>Мурзик</item>
+        <item>Мурка</item>
+        <item>Йоша</item>
+        <item>Масяня</item>
+        <item>Кабася</item>
+        <item>Пушок</item>
+        <item>Дымка</item>
+        <item>Кузя</item>
+        <item>Китти</item>
+        <item>Котяня</item>
+        <item>Симба</item>
+    </string-array>
     <string name="app_name">BigApplication</string>
     <string name="login">LOGIN</string>
     <string name="don_t_have_account">Don’t have account?</string>
@@ -31,4 +46,5 @@
     <string name="vkontakte">Vkontakte</string>
     <string name="facebook">Facebook</string>
     <string name="linkedin">Linkedin</string>
+    <string name="imageviewflag">imageViewFlag</string>
 </resources>

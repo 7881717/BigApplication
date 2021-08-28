@@ -12,12 +12,20 @@ class ContactsActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CustomRecyclerAdapter(fillList())
+        recyclerView.adapter = CustomRecyclerAdapter(getCatList())
+//        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     }
 
     private fun fillList(): List<String> {
         val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("$i element") }
+        for (i in 0..30) {
+            data.add("$i element")
+        }
         return data
     }
+
+    private fun getCatList(): List<String> {
+        return this.resources.getStringArray(R.array.cat_names).toList()
+    }
+
 }

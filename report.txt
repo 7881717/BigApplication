@@ -1,8 +1,12 @@
-за вчера и сегодня потратил `8 часов`
+за вчера и сегодня потратил `12 часов`
 вставил ресайклер с метанита, получил краш приложения.
 выпилил метанитовский ресайклер, приложение ожило.
 попробовал ресайклер отсюда (приложение ничего не показало):
 https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example
 выпилил ресайклер со stackoverflow.
+в итоге получилось по совету отсюда:
+http://developer.alexanderklimov.ru/android/views/recyclerview-kot.php
+картинки вставил по совету отсюда:
+https://www.techotopia.com/index.php/A_Kotlin_Android_RecyclerView_and_CardView_Tutorial
 код тут: https://github.com/7881717/BigApplication/tree/development
 план продолжить учёбу второго уровня.
