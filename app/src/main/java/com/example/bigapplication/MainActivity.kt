@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, LoggedActivity::class.java)
 
                 // data for next activity
-                intent.putExtra("Useremail", binding.etEmail.text.toString())
+                if (cheatCode) intent.putExtra("Useremail", "ladislaw.pszczelarz@okno.co")
+                else intent.putExtra("Useremail", binding.etEmail.text.toString())
                 intent.putExtra("Userpassword", binding.etPassword.text.toString())
 
                 // Logged Activity start
