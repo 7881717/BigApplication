@@ -39,6 +39,16 @@ class LoggedActivity : AppCompatActivity() {
         binding.tvUserName.text = toShow
 
 
+        binding.ivSocialFacebook.setOnClickListener {
+
+                val intent = Intent(this, OldContactsActivity::class.java)
+
+                // Contacts Activity start
+                startActivity(intent)
+                finish()
+
+        }
+
         binding.buttonViewMyContacts.setOnClickListener {
 
                 val intent = Intent(this, ContactsActivity::class.java)

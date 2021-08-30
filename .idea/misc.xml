@@ -9,8 +9,13 @@
         <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.16312056737588654" />
         <entry key="app/src/main/res/layout/activity_logged.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_old_contacts.xml" value="0.16312056737588654" />
         <entry key="app/src/main/res/layout/activity_restore.xml" value="0.2826086956521739" />
+        <entry key="app/src/main/res/layout/cardview_activity.xml" value="0.16312056737588654" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.16312056737588654" />
+        <entry key="app/src/main/res/layout/recyclerview_activity.xml" value="0.9640718562874252" />
         <entry key="app/src/main/res/layout/recyclerview_item.xml" value="0.16312056737588654" />
+        <entry key="app/src/main/res/layout/rv_item.xml" value="0.16312056737588654" />
       </map>
     </option>
   </component>

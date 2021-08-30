@@ -1,16 +1,17 @@
 package com.example.bigapplication
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import androidx.recyclerview.widget.RecyclerView
 
-import android.view.View
+import android.os.Bundle
 
 import android.app.Activity
+import android.view.View
 
 
-class ContactsActivity : Activity() {
+class RecyclerViewActivity : Activity() {
     private var persons: MutableList<Person>? = null
     private var rv: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,8 @@ class ContactsActivity : Activity() {
         setContentView(R.layout.recyclerview_activity)
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
-        rv?.layoutManager = llm
+        rv!!.layoutManager = llm
+        rv!!.setHasFixedSize(true)
         initializeData()
         initializeAdapter()
     }

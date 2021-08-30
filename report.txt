@@ -1,16 +1,7 @@
-за вчера и сегодня потратил `10 часов`
+за вчера и сегодня потратил `11 часов`
 попробовал код отсюда:
 https://www.fandroid.info/primer-ispolzovaniya-cardview-i-recyclerview-v-android/
-
-
-вставил ресайклер с метанита, получил краш приложения.
-выпилил метанитовский ресайклер, приложение ожило.
-попробовал ресайклер отсюда (приложение ничего не показало):
-https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example
-выпилил ресайклер со stackoverflow.
-в итоге получилось по совету отсюда:
-http://developer.alexanderklimov.ru/android/views/recyclerview-kot.php
-картинки вставил по совету отсюда:
-https://www.techotopia.com/index.php/A_Kotlin_Android_RecyclerView_and_CardView_Tutorial
+получился класс Person. Наполняемый и с выводом в Текствью.
+Использован CardView. Не знаю, правильно ли это?
 код тут: https://github.com/7881717/BigApplication/tree/development
 план продолжить учёбу второго уровня.
