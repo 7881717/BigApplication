@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/general_side_margin"
-    android:layout_marginEnd="@dimen/general_side_margin"
+    android:layout_marginHorizontal="@dimen/general_side_margin"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -15,104 +14,106 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guideline_weight" />
 
-    <TextView
-        android:id="@+id/tvMainTitle"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello"
-        android:textSize="@dimen/titleText"
-        app:layout_constraintTop_toTopOf="@id/guidelineMainHorizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/title_text"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineMainHorizontal" />
 
-    <TextView
-        android:id="@+id/tvMainTitleDescriptor"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitleDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enter_your_email_and"
-        android:textSize="@dimen/smallText"
-        app:layout_constraintTop_toBottomOf="@id/tvMainTitle"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/small_text"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
-    <TextView
-        android:id="@+id/tvEmail"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/e_mail"
-        android:textColor="@color/lightGray"
-        android:textSize="@dimen/smallText"
-        app:layout_constraintLeft_toLeftOf="@id/etEmail"
-        app:layout_constraintTop_toBottomOf="@id/tvMainTitleDescriptor"
         android:layout_marginTop="@dimen/big_vertical_margin"
-        />
+        android:text="@string/e_mail"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintLeft_toLeftOf="@id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitleDescriptor" />
 
-    <EditText
-        android:id="@+id/etEmail"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="e-mail"
         android:hint="@string/type_e_mail_here"
         android:inputType="textEmailAddress"
         android:textColor="@color/white"
-        android:textColorHint="@color/lightGray"
-        android:textSize="@dimen/editText"
+        android:textColorHint="@color/light_gray"
+        android:textSize="@dimen/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/tvPassword"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
-        android:textColor="@color/lightGray"
-        android:textSize="@dimen/smallText"
-        app:layout_constraintLeft_toLeftOf="@id/etPassword"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
-        />
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
-    <EditText
-        android:id="@+id/etPassword"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="password"
         android:hint="@string/type_password_here"
         android:inputType="textPassword"
         android:textColor="@color/white"
-        android:textColorHint="@color/lightGray"
-        android:textSize="@dimen/editText"
+        android:textColorHint="@color/light_gray"
+        android:textSize="@dimen/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <CheckBox
-        android:id="@+id/cbRememberMe"
-        android:layout_width="126dp"
-        android:layout_height="18dp"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBoxRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/remember_me"
-        android:textColor="@color/lightGray"
-        android:textSize="@dimen/mediumText"
-        app:layout_constraintLeft_toLeftOf="@id/etPassword"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/textViewForgotPassword"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
 
-    <TextView
-        android:id="@+id/tvForgotPassword"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forgot_your_password"
-        app:layout_constraintTop_toTopOf="@id/cbRememberMe"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxRememberMe"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="@dimen/mediumText" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxRememberMe"
+        app:layout_constraintTop_toTopOf="@id/checkBoxRememberMe" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLogin"
@@ -120,45 +121,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/white"
-        app:cornerRadius="8dp"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp"
-        android:textSize="@dimen/buttonText"
-        android:text="@string/login"
-        app:layout_constraintBottom_toTopOf="@id/barrierMain"
         android:layout_marginBottom="@dimen/item_vertical_margin"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/barrierMain"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="2dp" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrierMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="tvSignUp,tvSignUpDescriptor" />
+        app:constraint_referenced_ids="textViewSignUp,textViewSignUpDescriptor" />
 
-    <TextView
-        android:id="@+id/tvSignUpDescriptor"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSignUpDescriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/don_t_have_account"
-        android:textColor="@color/lightGray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/general_side_margin"
         android:layout_marginBottom="@dimen/item_vertical_margin"
-        android:layout_marginStart="@dimen/additional_side_margin"
-        android:textSize="@dimen/mediumText" />
+        android:text="@string/don_t_have_account"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSignUp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tvSignUp"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
-        app:layout_constraintBottom_toBottomOf="@id/tvSignUpDescriptor"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintBottom_toBottomOf="@id/textViewSignUpDescriptor"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/additional_side_margin"
-        android:textSize="@dimen/mediumText" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewSignUpDescriptor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@
         android:id="@+id/imageViewFlag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/imageviewflag" />
+        android:contentDescription="@string/imageview_flag" />
 
     <TextView
         android:id="@+id/textViewLarge"

@@ -7,116 +7,112 @@
     tools:context=".LoggedActivity">
 
     <View
-        android:id="@+id/tvTopBackground"
+        android:id="@+id/textViewTopBackground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/tvBottomBackground"
+        app:layout_constraintBottom_toTopOf="@id/textViewBottomBackground"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="0.5"/>
+        app:layout_constraintVertical_weight="0.5" />
 
     <View
-        android:id="@+id/tvBottomBackground"
+        android:id="@+id/textViewBottomBackground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTopBackground"
+        app:layout_constraintTop_toBottomOf="@id/textViewTopBackground"
         app:layout_constraintVertical_weight="0.5" />
 
-    <TextView
-        android:id="@+id/tvLoggedTitle"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLoggedTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:textSize="@dimen/titleText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="@dimen/item_vertical_margin"
         android:layout_marginStart="@dimen/general_side_margin"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:layout_marginTop="@dimen/item_vertical_margin"
+        android:text="@string/settings"
+        android:textSize="@dimen/title_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:contentDescription="@string/user_photo"
-        android:id="@+id/profileImage"
+        android:id="@+id/imageViewProfileImage"
         android:layout_width="@dimen/iconLogged"
         android:layout_height="@dimen/iconLogged"
+        android:contentDescription="@string/user_photo"
         android:src="@drawable/vladface"
-        app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
-        app:layout_constraintTop_toBottomOf="@id/tvLoggedTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="@dimen/editText"
-        app:layout_constraintTop_toBottomOf="@id/profileImage"
-        android:layout_marginTop="@dimen/item_vertical_margin"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/textViewLoggedTitle" />
 
-    <TextView
-        android:id="@+id/tvUserJob"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_vertical_margin"
+        android:text=""
+        android:textSize="@dimen/edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProfileImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/android_trainee"
-        android:textColor="@color/lightGray"
-        android:textSize="@dimen/mediumText"
-        app:layout_constraintTop_toBottomOf="@id/tvUserName"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/medium_text"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserName" />
 
-    <TextView
-        android:id="@+id/tvUserAddress"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUserAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_5295_gladiator_walks_apk_110"
-        android:textColor="@color/lightGray"
-        android:textSize="@dimen/mediumText"
-        app:layout_constraintTop_toBottomOf="@id/tvUserJob"
         android:layout_marginTop="@dimen/item_vertical_margin"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/_5295_gladiator_walks_apk_110"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/medium_text"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserJob" />
 
 
-    <ImageView
-        android:id="@+id/ivSocialFacebook"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSocialFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/additional_side_margin"
         android:contentDescription="@string/facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_f"
-        app:layout_constraintTop_toTopOf="@id/ivSocialLinkedin"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/additional_side_margin"/>
+        app:layout_constraintTop_toTopOf="@id/imageViewSocialLinkedin"
+        app:srcCompat="@drawable/ic_f" />
 
-    <ImageView
-        android:id="@+id/ivSocialLinkedin"
-        android:contentDescription="@string/linkedin"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSocialLinkedin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_in"
-        app:layout_constraintTop_toTopOf="@id/tvBottomBackground"
         android:layout_marginTop="@dimen/big_vertical_margin"
+        android:contentDescription="@string/linkedin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/textViewBottomBackground"
+        app:srcCompat="@drawable/ic_in" />
 
-    <ImageView
-        android:id="@+id/ivSocialVKontakte"
-        android:contentDescription="@string/vkontakte"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSocialVKontakte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_vk"
-        app:layout_constraintTop_toTopOf="@id/ivSocialLinkedin"
+        android:layout_marginEnd="@dimen/additional_side_margin"
+        android:contentDescription="@string/vkontakte"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/additional_side_margin"/>
+        app:layout_constraintTop_toTopOf="@id/imageViewSocialLinkedin"
+        app:srcCompat="@drawable/ic_vk" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -129,7 +125,7 @@
         android:layout_marginEnd="@dimen/general_side_margin"
         android:text="@string/edit_profile"
         android:textColor="@color/black"
-        android:textSize="@dimen/buttonText"
+        android:textSize="@dimen/button_text"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/buttonViewMyContacts"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,15 +146,14 @@
         android:layout_marginBottom="@dimen/item_vertical_margin"
         android:text="@string/view_my_contacts"
         android:textColor="@color/white"
-        android:textSize="@dimen/buttonText"
+        android:textSize="@dimen/button_text"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/tvBottomBackground"
+        app:layout_constraintBottom_toBottomOf="@id/textViewBottomBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/orange"
         app:strokeWidth="2dp"
         tools:ignore="TextContrastCheck" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

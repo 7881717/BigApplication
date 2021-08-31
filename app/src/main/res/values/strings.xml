@@ -46,5 +46,5 @@
     <string name="vkontakte">Vkontakte</string>
     <string name="facebook">Facebook</string>
     <string name="linkedin">Linkedin</string>
-    <string name="imageviewflag">imageViewFlag</string>
+    <string name="imageview_flag">imageViewFlag</string>
 </resources>

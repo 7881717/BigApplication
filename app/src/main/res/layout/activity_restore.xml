@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".RestoreActivity">
 
-    <TextView
-        android:id="@+id/tvRestoreTitle"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRestoreTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/restore_your_password"
-        android:textSize="@dimen/titleText"
+        android:textSize="@dimen/title_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/max_vertical_margin"

@@ -19,8 +19,8 @@ class LoggedActivity : AppCompatActivity() {
         val intent = intent
 
         // data from previous activity
-        val userEmail = intent.getStringExtra("Useremail")
-        val userPassword = intent.getStringExtra("Userpassword")
+        val userEmail = intent.getStringExtra("UserEmail")
+        val userPassword = intent.getStringExtra("UserPassword")
 
         // first name parser
         val preName = userEmail?.substringBefore("@")
@@ -36,10 +36,10 @@ class LoggedActivity : AppCompatActivity() {
 
         // show parsed names
         val toShow = "$first $last"
-        binding.tvUserName.text = toShow
+        binding.textViewUserName.text = toShow
 
 
-        binding.ivSocialFacebook.setOnClickListener {
+        binding.imageViewSocialFacebook.setOnClickListener {
 
                 val intent = Intent(this, OldContactsActivity::class.java)
 

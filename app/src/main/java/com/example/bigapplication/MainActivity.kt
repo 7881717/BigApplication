@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, LoggedActivity::class.java)
 
                 // data for next activity
-                if (cheatCode) intent.putExtra("Useremail", "ladislaw.pszczelarz@okno.co")
-                else intent.putExtra("Useremail", binding.etEmail.text.toString())
-                intent.putExtra("Userpassword", binding.etPassword.text.toString())
+                if (cheatCode) intent.putExtra("UserEmail", "ladislaw.pszczelarz@okno.co")
+                else intent.putExtra("UserEmail", binding.editTextEmail.text.toString())
+                intent.putExtra("UserPassword", binding.editTextPassword.text.toString())
 
                 // Logged Activity start
                 startActivity(intent)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // tap forgot password
-        binding.tvForgotPassword.setOnClickListener {
+        binding.textViewForgotPassword.setOnClickListener {
 
             // Restore Activity start
             val intent = Intent(this, RestoreActivity::class.java)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // tap sign up
-        binding.tvSignUp.setOnClickListener {
+        binding.textViewSignUp.setOnClickListener {
 
             // Auth Activity start
             val intent = Intent(this, AuthActivity::class.java)
@@ -58,16 +58,16 @@ class MainActivity : AppCompatActivity() {
         // validation flag
         var emailCorrect = false
 
-        val email = binding.etEmail.text.trim { it <= ' ' }
+        val email = binding.editTextEmail.text?.trim { it <= ' ' }
         // email regex
         val emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
         // email check
-        if (emailRegex.toRegex().matches(email)) {
+        if (emailRegex.toRegex().matches(email.toString())) {
             emailCorrect = true
         } else {
             // wrong email message
-            binding.etEmail.error = getString(R.string.invalid_email)
+            binding.editTextEmail.error = getString(R.string.invalid_email)
         }
         return emailCorrect
     }
@@ -76,14 +76,14 @@ class MainActivity : AppCompatActivity() {
         // validation flag
         var passwordCorrect = false
 
-        val password = binding.etPassword.text
+        val password = binding.editTextPassword.text
 
         // password check
-        if (password.length > 7) {
+        if (password?.length!! > 7) {
             passwordCorrect = true
         } else {
             // invalid password message
-            binding.etPassword.error = getString(R.string.invalid_password)
+            binding.editTextPassword.error = getString(R.string.invalid_password)
         }
         return passwordCorrect
     }
