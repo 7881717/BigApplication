@@ -40,44 +40,27 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:autofillHints="e-mail"
         android:hint="@string/type_e_mail_here"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textColorHint="@color/light_gray"
-        android:textSize="@dimen/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewEmail"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left"
         android:text="@string/password"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/small_text"
-        app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:autofillHints="password"
         android:hint="@string/type_password_here"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/light_gray"
-        android:textSize="@dimen/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewPassword"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword"/>
 
     <CheckBox
         android:id="@+id/checkBoxRememberMe"
@@ -91,12 +74,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Right"
         android:text="@string/forgot_your_password"
         android:textSize="@dimen/medium_text"
         app:layout_constraintBottom_toBottomOf="@+id/checkBoxRememberMe"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/checkBoxRememberMe"
         app:layout_constraintTop_toTopOf="@id/checkBoxRememberMe" />
