@@ -2,90 +2,59 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/general_side_margin"
-    android:layout_marginEnd="@dimen/general_side_margin"
+    style="@style/MatchParent.SideMargin"
     tools:context=".AuthActivity"
     tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineAuthHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guideline_weight" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAuthTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:text="@string/let_s_get_acquainted"
         android:textSize="@dimen/title_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guidelineAuthHorizontal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAuthTitleDescriptor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered.Small"
         android:text="@string/fill_out_the_profile_and"
-        android:textSize="@dimen/small_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewAuthTitle" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left.Light"
         android:layout_marginTop="@dimen/big_vertical_margin"
         android:text="@string/e_mail"
-        android:textColor="@color/light_gray"
-        android:textSize="@dimen/small_text"
-        app:layout_constraintStart_toStartOf="@id/editTextEmail"
         app:layout_constraintTop_toBottomOf="@id/textViewAuthTitleDescriptor" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:autofillHints="e-mail"
         android:hint="@string/type_e_mail_here"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
-        android:textColorHint="@color/light_gray"
-        android:textSize="@dimen/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewEmail"
         tools:ignore="TouchTargetSizeCheck" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left.Light"
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/password"
-        android:textColor="@color/light_gray"
-        android:textSize="@dimen/small_text"
-        app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
         app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:autofillHints="password"
         android:hint="@string/type_password_here"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/light_gray"
-        android:textSize="@dimen/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -93,64 +62,46 @@
         android:id="@+id/checkBoxRememberMe"
         style="@style/WrapContent.Left.CheckBox"
         android:text="@string/remember_me"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.BigButton"
         android:text="@string/register"
-        android:textColor="@color/white"
-        android:textSize="@dimen/button_text"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@id/textViewAgreeTC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp" />
-
+        app:layout_constraintBottom_toTopOf="@id/textViewAgreeTC" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAgreeTC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered.Small"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
         android:gravity="center"
         android:text="@string/by_clicking_register_you"
-        android:textSize="@dimen/small_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/barrierAuth"
-        android:layout_marginBottom="@dimen/item_vertical_margin"/>
+        app:layout_constraintBottom_toBottomOf="@id/barrierAuth" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrierAuth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         app:barrierDirection="top"
         app:constraint_referenced_ids="textViewLogin,textViewLoginDescriptor" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLoginDescriptor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left"
+        android:layout_marginEnd="@dimen/general_side_margin"
+        android:layout_marginBottom="@dimen/item_vertical_margin"
         android:text="@string/already_have_an_account"
         android:textColor="@color/light_gray"
-        android:textSize="@dimen/medium_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="@dimen/item_vertical_margin"
-        android:layout_marginStart="@dimen/additional_side_margin"/>
+        app:layout_constraintEnd_toStartOf="@+id/textViewLogin"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/additional_side_margin"
+        style="@style/WrapContent.Right"
         android:text="@string/sign_in"
-        android:textSize="@dimen/medium_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/textViewLoginDescriptor" />
+        app:layout_constraintBottom_toBottomOf="@id/textViewLoginDescriptor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewLoginDescriptor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

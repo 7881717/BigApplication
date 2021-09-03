@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoggedActivity">
+    style="@style/MatchParent"
+    tools:context=".LoggedActivity"
+    tools:ignore="MissingConstraints">
 
     <View
         android:id="@+id/textViewTopBackground"
@@ -117,42 +117,25 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonEditProfile"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.BigButton"
         android:layout_height="40dp"
-        android:layout_gravity="center"
         android:layout_marginStart="@dimen/general_side_margin"
         android:layout_marginEnd="@dimen/general_side_margin"
         android:text="@string/edit_profile"
         android:textColor="@color/black"
-        android:textSize="@dimen/button_text"
-        app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/buttonViewMyContacts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/black"
-        app:strokeWidth="2dp"
         tools:ignore="TouchTargetSizeCheck" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonViewMyContacts"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton.BigButton"
         android:layout_marginStart="@dimen/general_side_margin"
         android:layout_marginEnd="@dimen/general_side_margin"
         android:layout_marginBottom="@dimen/item_vertical_margin"
         android:text="@string/view_my_contacts"
-        android:textColor="@color/white"
-        android:textSize="@dimen/button_text"
-        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="@id/textViewBottomBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp"
         tools:ignore="TextContrastCheck" />
 
 
