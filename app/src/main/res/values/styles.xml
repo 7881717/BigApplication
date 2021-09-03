@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="RoundButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
-
-        <item name="android:textColor">@color/orange</item>
-
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="WrapContent.Centered">
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+    <style name="WrapContent.Left">
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+    <style name="WrapContent.Left.CheckBox">
+        <item name="android:layout_marginTop">@dimen/item_vertical_margin</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textSize">@dimen/medium_text</item>
+    </style>
+
 
 </resources>

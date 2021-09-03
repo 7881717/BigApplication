@@ -5,10 +5,10 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.13148148148148148" />
         <entry key="app/src/main/res/drawable/ic_vk.xml" value="0.14444444444444443" />
-        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.23694779116465864" />
         <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.16312056737588654" />
         <entry key="app/src/main/res/layout/activity_logged.xml" value="0.22752808988764045" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20136518771331058" />
         <entry key="app/src/main/res/layout/activity_old_contacts.xml" value="0.16312056737588654" />
         <entry key="app/src/main/res/layout/activity_restore.xml" value="0.2826086956521739" />
         <entry key="app/src/main/res/layout/cardview_activity.xml" value="0.16312056737588654" />

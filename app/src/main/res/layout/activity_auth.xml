@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_marginStart="@dimen/general_side_margin"
     android:layout_marginEnd="@dimen/general_side_margin"
-    tools:context=".AuthActivity">
+    tools:context=".AuthActivity"
+    tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineAuthHorizontal"
@@ -88,18 +89,11 @@
         app:layout_constraintTop_toBottomOf="@id/textViewPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-
-    <androidx.appcompat.widget.AppCompatCheckBox
+    <CheckBox
         android:id="@+id/checkBoxRememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_vertical_margin"
-        android:layout_marginTop="@dimen/item_vertical_margin"
+        style="@style/WrapContent.Left.CheckBox"
         android:text="@string/remember_me"
-        android:textColor="@color/light_gray"
-        android:textSize="@dimen/medium_text"
-        app:layout_constraintStart_toStartOf="@id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"

@@ -4,45 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/general_side_margin"
-    tools:context=".MainActivity">
+    android:layout_marginStart="@dimen/general_side_margin"
+    android:layout_marginEnd="@dimen/general_side_margin"
+    tools:context=".MainActivity"
+    tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMainHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guideline_weight" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:text="@string/hello"
         android:textSize="@dimen/title_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guidelineMainHorizontal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewTitleDescriptor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:text="@string/enter_your_email_and"
         android:textSize="@dimen/small_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left"
         android:layout_marginTop="@dimen/big_vertical_margin"
         android:text="@string/e_mail"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/small_text"
-        app:layout_constraintLeft_toLeftOf="@id/editTextEmail"
         app:layout_constraintTop_toBottomOf="@id/textViewTitleDescriptor" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -56,7 +49,6 @@
         android:textColorHint="@color/light_gray"
         android:textSize="@dimen/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewEmail"
         tools:ignore="TouchTargetSizeCheck" />
@@ -87,20 +79,14 @@
         app:layout_constraintTop_toBottomOf="@id/textViewPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
+    <CheckBox
         android:id="@+id/checkBoxRememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/item_vertical_margin"
+        style="@style/WrapContent.Left.CheckBox"
         android:text="@string/remember_me"
-        android:textColor="@color/light_gray"
-        android:textSize="@dimen/medium_text"
         app:layout_constraintEnd_toStartOf="@+id/textViewForgotPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword"/>
 
 
     <androidx.appcompat.widget.AppCompatTextView
