@@ -25,14 +25,11 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewLoggedTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Left"
         android:layout_marginStart="@dimen/general_side_margin"
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/settings"
         android:textSize="@dimen/title_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -50,67 +47,49 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:text=""
         android:textSize="@dimen/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageViewProfileImage" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewUserJob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:text="@string/android_trainee"
         android:textColor="@color/light_gray"
-        android:textSize="@dimen/medium_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewUserName" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewUserAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/_5295_gladiator_walks_apk_110"
         android:textColor="@color/light_gray"
-        android:textSize="@dimen/medium_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewUserJob" />
 
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewSocialFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/additional_side_margin"
+        style="@style/WrapContent.Left"
         android:contentDescription="@string/facebook"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSocialLinkedin"
         app:layout_constraintTop_toTopOf="@id/imageViewSocialLinkedin"
         app:srcCompat="@drawable/ic_f" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewSocialLinkedin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent.Centered"
         android:layout_marginTop="@dimen/big_vertical_margin"
         android:contentDescription="@string/linkedin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/textViewBottomBackground"
         app:srcCompat="@drawable/ic_in" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewSocialVKontakte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/additional_side_margin"
+        style="@style/WrapContent.Right"
         android:contentDescription="@string/vkontakte"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewSocialLinkedin"
         app:layout_constraintTop_toTopOf="@id/imageViewSocialLinkedin"
         app:srcCompat="@drawable/ic_vk" />
 
