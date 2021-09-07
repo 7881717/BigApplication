@@ -15,7 +15,7 @@ class ContactsActivity : Activity() {
     private var rv: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recyclerview_activity)
+        setContentView(R.layout.activity_recyclerview)
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
         rv?.layoutManager = llm
@@ -26,8 +26,9 @@ class ContactsActivity : Activity() {
     private fun initializeData() {
         persons = ArrayList()
         persons!!.add(Person("Emma Wilson", "23 years old", R.drawable.emma))
-        persons!!.add(Person("Lavery Maiss", "25 years old", R.drawable.lavery))
+        persons!!.add(Person("Ann Lace", "25 years old", R.drawable.lavery))
         persons!!.add(Person("Lillie Watts", "35 years old", R.drawable.lillie))
+        persons!!.add(Person("Columbia", "202 years old", R.drawable.columbia))
     }
 
     private fun initializeAdapter() {

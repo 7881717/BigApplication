@@ -16,7 +16,7 @@ class RecyclerViewActivity : Activity() {
     private var rv: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recyclerview_activity)
+        setContentView(R.layout.activity_recyclerview)
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
         rv!!.layoutManager = llm
