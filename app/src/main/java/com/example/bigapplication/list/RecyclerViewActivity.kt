@@ -1,4 +1,4 @@
-package com.example.bigapplication
+package com.example.bigapplication.list
 
 
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +9,8 @@ import android.os.Bundle
 
 import android.app.Activity
 import android.view.View
+import com.example.bigapplication.Person
+import com.example.bigapplication.R
 
 
 class RecyclerViewActivity : Activity() {
@@ -23,6 +25,7 @@ class RecyclerViewActivity : Activity() {
         rv!!.setHasFixedSize(true)
         initializeData()
         initializeAdapter()
+
     }
 
     private fun initializeData() {

@@ -1,4 +1,4 @@
-package com.example.bigapplication
+package com.example.bigapplication.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bigapplication.R
 
 class CustomRecyclerAdapter(private val names: List<String>) :
     RecyclerView.Adapter<CustomRecyclerAdapter.MyViewHolder>() {

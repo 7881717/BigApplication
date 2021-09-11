@@ -1,4 +1,4 @@
-package com.example.bigapplication
+package com.example.bigapplication.list
 
 
 
@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 
 import androidx.cardview.widget.CardView
+import com.example.bigapplication.Person
+import com.example.bigapplication.R
 
 
 class RVAdapter internal constructor(var persons: List<Person>) :
