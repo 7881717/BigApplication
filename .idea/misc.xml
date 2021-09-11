@@ -4,20 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.13148148148148148" />
+        <entry key="..\:/study/0AND/SHPP_ANDR/rev/VladPasech/2/app/src/main/res/layout/activity_contacts.xml" value="0.25092592592592594" />
+        <entry key="..\:/study/0AND/SHPP_ANDR/rev/VladPasech/2/app/src/main/res/layout/item.xml" value="0.25092592592592594" />
+        <entry key="..\:/study/0AND/SHPP_ANDR/rev/VladPasech/2/app/src/main/res/layout/recyclerview_item.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/drawable/ic_vk.xml" value="0.14444444444444443" />
-        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.11847389558232932" />
-        <entry key="app/src/main/res/layout/activity_card_view.xml" value="0.16312056737588654" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.16312056737588654" />
-        <entry key="app/src/main/res/layout/activity_logged.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1798780487804878" />
-        <entry key="app/src/main/res/layout/activity_old_contacts.xml" value="0.16312056737588654" />
-        <entry key="app/src/main/res/layout/activity_recyclerview.xml" value="0.16312056737588654" />
+        <entry key="app/src/main/res/layout/activity_logged.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_restore.xml" value="0.2826086956521739" />
-        <entry key="app/src/main/res/layout/cardview_activity.xml" value="0.16312056737588654" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.16312056737588654" />
-        <entry key="app/src/main/res/layout/recyclerview_activity.xml" value="0.9640718562874252" />
         <entry key="app/src/main/res/layout/recyclerview_item.xml" value="0.16312056737588654" />
-        <entry key="app/src/main/res/layout/rv_item.xml" value="0.16312056737588654" />
       </map>
     </option>
   </component>
@@ -26,12 +22,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="1.0" />
-      </ProjectState>
-    </option>
   </component>
 </project>

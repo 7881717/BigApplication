@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val pref =  getSharedPreferences("HAHAHA", MODE_PRIVATE)
+        pref.getBoolean("isCheked", false)
 
         // Login button
         binding.buttonLogin.setOnClickListener {
@@ -34,11 +36,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.checkBoxRememberMe.setOnCheckedChangeListener { compoundButton, b ->
+            val pref =  getSharedPreferences("HAHAHA", MODE_PRIVATE)
+            pref.edit().putBoolean("isCheked", b).apply()
+        }
+
         // tap forgot password
         binding.textViewForgotPassword.setOnClickListener {
 
             // Restore Activity start
             val intent = Intent(this, RestoreActivity::class.java)
+
             startActivity(intent)
             finish()
         }

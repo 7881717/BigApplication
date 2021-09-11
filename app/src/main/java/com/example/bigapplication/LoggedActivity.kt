@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bigapplication.databinding.ActivityLoggedBinding
+import com.example.bigapplication.list.RecyclerViewActivity
 import java.util.*
 
 
@@ -51,7 +52,7 @@ class LoggedActivity : AppCompatActivity() {
 
         binding.buttonViewMyContacts.setOnClickListener {
 
-                val intent = Intent(this, ContactsActivity::class.java)
+                val intent = Intent(this, RecyclerViewActivity::class.java)
 
                 // Contacts Activity start
                 startActivity(intent)

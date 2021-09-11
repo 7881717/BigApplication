@@ -8,21 +8,26 @@ import androidx.recyclerview.widget.RecyclerView
 import android.os.Bundle
 
 import android.app.Activity
-import android.view.View
 import com.example.bigapplication.Person
 import com.example.bigapplication.R
+import com.example.bigapplication.databinding.ActivityRecyclerviewBinding
+import com.example.bigapplication.newList.ContactsAdapter
 
 
 class RecyclerViewActivity : Activity() {
     private var persons: MutableList<Person>? = null
-    private var rv: RecyclerView? = null
+    private lateinit var rv: RecyclerView
+    private lateinit var binding: ActivityRecyclerviewBinding
+    private lateinit var adapter: ContactsAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recyclerview)
-        rv = findViewById<View>(R.id.rv) as RecyclerView
-        val llm = LinearLayoutManager(this)
-        rv!!.layoutManager = llm
-        rv!!.setHasFixedSize(true)
+        binding = ActivityRecyclerviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        rv = binding.rv
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.setHasFixedSize(true)
+
         initializeData()
         initializeAdapter()
 
@@ -30,13 +35,19 @@ class RecyclerViewActivity : Activity() {
 
     private fun initializeData() {
         persons = ArrayList()
-        persons!!.add(Person("Emma Wilson", "23 years old", R.drawable.emma))
-        persons!!.add(Person("Lavery Maiss", "25 years old", R.drawable.lavery))
-        persons!!.add(Person("Lillie Watts", "35 years old", R.drawable.lillie))
+        repeat(22){
+            persons?.let { list ->
+                list.add(Person("Emma Wilson", "23 years old", R.drawable.emma))
+                list.add(Person("Lavery Maiss", "25 years old", R.drawable.lavery))
+                list.add(Person("Lillie Watts", "35 years old", R.drawable.lillie))
+            }
+        }
+
     }
 
     private fun initializeAdapter() {
-        val adapter = RVAdapter(persons!!)
-        rv!!.adapter = adapter
+        adapter = ContactsAdapter()
+        rv.adapter = adapter
+        adapter.submitList(persons)
     }
 }
