@@ -1,4 +1,8 @@
-за вчера и сегодня потратил `2 часа`
-менял кардвью в ресайклере
+за вчера и сегодня потратил `4 часа`
+пробовал sharedpreferenses
+долго искал, где смотреть сохранённый файл и нашёл:
+в андроид студии нажать view -> tool windows -> device file explorer
+нашел «/ data / data / <имя моего пакета> / shared_prefs /»
+а там лежит XML с именем, которое я задал в private const val PREFS_FILE = 
 код тут: https://github.com/7881717/BigApplication/tree/development
 план продолжить учёбу второго уровня.

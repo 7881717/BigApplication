@@ -51,6 +51,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        // tap sign up
+        binding.textViewTitle.setOnClickListener {
+
+            // Auth Activity start
+            val intent = Intent(this, SaverActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 
