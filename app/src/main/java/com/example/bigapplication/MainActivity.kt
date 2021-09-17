@@ -2,18 +2,33 @@ package com.example.bigapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bigapplication.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+    private var settings: SharedPreferences? = null
     @SuppressLint("CutPasteId")
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        settings = getSharedPreferences(Preferences.PREFS_FILE, MODE_PRIVATE)
+
+        if (settings?.getString(Preferences.PREF_NAME, "empty") != "empty") {
+            val intent = Intent(this, LoggedActivity::class.java)
+
+            // data for next activity
+            intent.putExtra("UserEmail", settings?.getString(Preferences.PREF_NAME, "empty"))
+
+
+            // Logged Activity start
+            startActivity(intent)
+            finish()
+        }
 
         // Login button
         binding.buttonLogin.setOnClickListener {
@@ -21,6 +36,14 @@ class MainActivity : AppCompatActivity() {
             // cheat code for fast forward to next activity
             val cheatCode = true
             if (cheatCode || (emailChecker() && passwordChecker())) {
+
+
+                if (binding.checkBoxRememberMe.isChecked) {
+                    val prefEditor = settings?.edit()
+                    prefEditor?.putString(Preferences.PREF_NAME, binding.editTextEmail.text.toString())
+                    prefEditor?.commit()
+                }
+
                 val intent = Intent(this, LoggedActivity::class.java)
 
                 // data for next activity

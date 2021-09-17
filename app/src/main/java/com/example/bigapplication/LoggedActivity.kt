@@ -39,6 +39,15 @@ class LoggedActivity : AppCompatActivity() {
         binding.textViewUserName.text = toShow
 
 
+        binding.textViewLogOut.setOnClickListener {
+
+                val intent = Intent(this, MainActivity::class.java)
+            getSharedPreferences(Preferences.PREFS_FILE, MODE_PRIVATE)?.edit()?.clear()?.commit()
+                // Contacts Activity start
+                startActivity(intent)
+                finish()
+
+        }
         binding.imageViewSocialFacebook.setOnClickListener {
 
                 val intent = Intent(this, OldContactsActivity::class.java)

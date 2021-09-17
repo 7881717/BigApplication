@@ -32,6 +32,14 @@
         android:textSize="@dimen/title_text"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLogOut"
+        style="@style/WrapContent.Right"
+        android:layout_marginEnd="@dimen/general_side_margin"
+        android:layout_marginTop="@dimen/item_vertical_margin"
+        android:text="@string/log_out"
+        android:textSize="@dimen/edit_text"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewProfileImage"
