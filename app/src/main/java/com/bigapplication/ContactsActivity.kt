@@ -1,4 +1,4 @@
-package com.example.bigapplication
+package com.bigapplication
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager

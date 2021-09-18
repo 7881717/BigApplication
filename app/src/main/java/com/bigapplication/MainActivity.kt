@@ -1,11 +1,11 @@
-package com.example.bigapplication
+package com.bigapplication
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bigapplication.databinding.ActivityMainBinding
+import com.bigapplication.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {

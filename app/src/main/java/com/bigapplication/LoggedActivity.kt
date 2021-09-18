@@ -1,9 +1,9 @@
-package com.example.bigapplication
+package com.bigapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bigapplication.databinding.ActivityLoggedBinding
+import com.bigapplication.databinding.ActivityLoggedBinding
 import java.util.*
 
 

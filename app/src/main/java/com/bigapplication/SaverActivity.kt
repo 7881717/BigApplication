@@ -1,10 +1,10 @@
-package com.example.bigapplication
+package com.bigapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.SharedPreferences
 import android.view.View
-import com.example.bigapplication.databinding.ActivitySaverBinding
+import com.bigapplication.databinding.ActivitySaverBinding
 
 
 class SaverActivity : AppCompatActivity() {
