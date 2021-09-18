@@ -1,6 +1,5 @@
 package com.example.bigapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +14,7 @@ class ContactsActivity : Activity() {
     private var rv: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recyclerview)
+        setContentView(R.layout.activity_recycl)
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
         rv?.layoutManager = llm
@@ -32,7 +31,7 @@ class ContactsActivity : Activity() {
     }
 
     private fun initializeAdapter() {
-        val adapter = RVAdapter(persons!!)
+        val adapter = Adapter1(persons!!)
         rv!!.adapter = adapter
     }
 }

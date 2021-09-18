@@ -15,8 +15,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 
 
-class RVAdapter internal constructor(var persons: List<Person>) :
-    RecyclerView.Adapter<RVAdapter.PersonViewHolder>() {
+class Adapter1 internal constructor(var persons: List<Person>) :
+    RecyclerView.Adapter<Adapter1.PersonViewHolder>() {
     class PersonViewHolder internal constructor(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         var cv: CardView

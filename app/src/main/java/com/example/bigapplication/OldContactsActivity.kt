@@ -12,7 +12,7 @@ class OldContactsActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CustomRecyclerAdapter(getCatList())
+        recyclerView.adapter = Adapter2(getCatList())
 //        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     }
 

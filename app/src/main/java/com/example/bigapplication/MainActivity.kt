@@ -10,6 +10,7 @@ import com.example.bigapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private var settings: SharedPreferences? = null
+
     @SuppressLint("CutPasteId")
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,22 +34,23 @@ class MainActivity : AppCompatActivity() {
         // Login button
         binding.buttonLogin.setOnClickListener {
 
-            // cheat code for fast forward to next activity
-            val cheatCode = true
-            if (cheatCode || (emailChecker() && passwordChecker())) {
+
+            if (emailChecker() && passwordChecker()) {
 
 
                 if (binding.checkBoxRememberMe.isChecked) {
                     val prefEditor = settings?.edit()
-                    prefEditor?.putString(Preferences.PREF_NAME, binding.editTextEmail.text.toString())
+                    prefEditor?.putString(
+                        Preferences.PREF_NAME,
+                        binding.editTextEmail.text.toString()
+                    )
                     prefEditor?.commit()
                 }
 
                 val intent = Intent(this, LoggedActivity::class.java)
 
                 // data for next activity
-                if (cheatCode) intent.putExtra("UserEmail", "ladislaw.pszczelarz@okno.co")
-                else intent.putExtra("UserEmail", binding.editTextEmail.text.toString())
+                intent.putExtra("UserEmail", binding.editTextEmail.text.toString())
                 intent.putExtra("UserPassword", binding.editTextPassword.text.toString())
 
                 // Logged Activity start

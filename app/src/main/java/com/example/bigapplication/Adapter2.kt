@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomRecyclerAdapter(private val names: List<String>) :
-    RecyclerView.Adapter<CustomRecyclerAdapter.MyViewHolder>() {
+class Adapter2(private val names: List<String>) :
+    RecyclerView.Adapter<Adapter2.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var flagImageView: ImageView? = null
