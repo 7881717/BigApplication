@@ -38,7 +38,7 @@ class Adapter1 internal constructor(var persons: List<Person>) :
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): PersonViewHolder {
         val v: View =
-            LayoutInflater.from(viewGroup.context).inflate(R.layout.item, viewGroup, false)
+            LayoutInflater.from(viewGroup.context).inflate(R.layout.item1, viewGroup, false)
         return PersonViewHolder(v)
     }
 

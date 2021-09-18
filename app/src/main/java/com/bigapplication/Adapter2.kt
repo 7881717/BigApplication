@@ -25,7 +25,7 @@ class Adapter2(private val names: List<String>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.recyclerview_item, parent, false)
+                .inflate(R.layout.item2, parent, false)
         return MyViewHolder(itemView)
     }
 

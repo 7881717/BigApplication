@@ -5,15 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class OldContactsActivity : AppCompatActivity() {
+class Contacts2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contacts)
+        setContentView(R.layout.activity_contacts2)
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerViewOld)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = Adapter2(getCatList())
-//        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
     }
 
     private fun fillList(): List<String> {

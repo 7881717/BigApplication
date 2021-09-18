@@ -18,10 +18,10 @@
             android:name=".SaverActivity"
             android:exported="true" />
         <activity
-            android:name=".OldContactsActivity"
+            android:name=".Contacts2Activity"
             android:exported="true" />
         <activity
-            android:name=".ContactsActivity"
+            android:name=".Contacts1Activity"
             android:exported="true" />
         <activity
             android:name=".LoggedActivity"

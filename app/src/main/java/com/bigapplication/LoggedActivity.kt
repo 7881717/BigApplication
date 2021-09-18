@@ -50,7 +50,7 @@ class LoggedActivity : AppCompatActivity() {
         }
         binding.imageViewSocialFacebook.setOnClickListener {
 
-                val intent = Intent(this, OldContactsActivity::class.java)
+                val intent = Intent(this, Contacts2Activity::class.java)
 
                 // Contacts Activity start
                 startActivity(intent)
@@ -60,7 +60,7 @@ class LoggedActivity : AppCompatActivity() {
 
         binding.buttonViewMyContacts.setOnClickListener {
 
-                val intent = Intent(this, ContactsActivity::class.java)
+                val intent = Intent(this, Contacts1Activity::class.java)
 
                 // Contacts Activity start
                 startActivity(intent)
