@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 
 import androidx.cardview.widget.CardView
+import com.bumptech.glide.Glide
 
 
 class Adapter1 internal constructor(var persons: List<Person>) :
@@ -29,6 +30,11 @@ class Adapter1 internal constructor(var persons: List<Person>) :
             personName = itemView.findViewById(R.id.person_name)
             personAge = itemView.findViewById(R.id.person_age)
             personPhoto = itemView.findViewById(R.id.person_photo) as ImageView
+            Glide.with(personPhoto)
+                .load("https://i.pravatar.cc")
+                .circleCrop()
+                .into(personPhoto)
+
         }
     }
 
@@ -45,6 +51,10 @@ class Adapter1 internal constructor(var persons: List<Person>) :
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, i: Int) {
         personViewHolder.personName.text = persons[i].name
         personViewHolder.personAge.text = persons[i].age
+/*        Glide.with(personViewHolder.personPhoto)
+            .load("https://i.pravatar.cc/")
+            .circleCrop()
+            .into(personViewHolder.personPhoto)*/
         personViewHolder.personPhoto.setImageResource(persons[i].photoId)
     }
 

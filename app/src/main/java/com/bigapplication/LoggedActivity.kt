@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bigapplication.databinding.ActivityLoggedBinding
+import com.bumptech.glide.Glide
 import java.util.*
 
 
@@ -15,6 +16,11 @@ class LoggedActivity : AppCompatActivity() {
         binding = ActivityLoggedBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // avatar rounding
+        Glide.with(binding.imageViewProfileImage)
+            .load(R.drawable.vladface)
+            .circleCrop()
+            .into(binding.imageViewProfileImage)
 
         val intent = intent
 

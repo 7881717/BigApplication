@@ -41,17 +41,18 @@
         android:textSize="@dimen/edit_text"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <!--de.hdodenhof.circleimageview.CircleImageView -->
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewProfileImage"
         android:layout_width="@dimen/iconLogged"
         android:layout_height="@dimen/iconLogged"
         android:contentDescription="@string/user_photo"
-        android:src="@drawable/vladface"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewLoggedTitle" />
+    <!--android:src="@drawable/vladface"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" -->
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewUserName"
