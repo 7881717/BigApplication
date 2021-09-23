@@ -7,7 +7,7 @@
     tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineAuthHorizontal"
+        android:id="@+id/guidelineHorizontal"
         style="@style/WrapContent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/guideline_weight" />
@@ -17,7 +17,7 @@
         style="@style/WrapContent.Centered"
         android:text="@string/let_s_get_acquainted"
         android:textSize="@dimen/title_text"
-        app:layout_constraintTop_toTopOf="@id/guidelineAuthHorizontal" />
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAuthTitleDescriptor"

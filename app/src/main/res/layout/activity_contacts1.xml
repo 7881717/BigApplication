@@ -45,9 +45,17 @@
         android:id="@+id/textViewBottomBackground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewAddContacts"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewAddContacts" />
+
+    <!--ЭТО - "КОСТЫЛЬ", Т.К. ПРИ ПРИВЯЗКЕ К ВЕРХНЕЙ ВЬЮ RECYCLER ВЫЛАЗИТ ВВЕРХ ЗА ПОЛЕ -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal"
+        style="@style/WrapContent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guideline_big_weight" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
@@ -58,6 +66,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textViewBottomBackground" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

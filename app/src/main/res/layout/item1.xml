@@ -1,67 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv"
-    card_view:cardCornerRadius="6dp"
-    card_view:cardBackgroundColor="#84ffff"
-    >
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="6dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        tools:ignore="MissingConstraints">
+        android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/person_photo"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
-            android:layout_marginEnd="16dp"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/user_photo"
-            />
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/person_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/person_photo"
             android:textColor="@color/black"
-            android:textSize="30sp"
-            card_view:layout_constraintStart_toEndOf="@+id/person_photo"
-            card_view:layout_constraintTop_toTopOf="parent"
-            tools:text="Emma Patrick"
-            />
+            android:textSize="30sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/person_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_below="@+id/person_name"
             android:layout_toEndOf="@+id/person_photo"
-            android:textColor="@color/black"
-            card_view:layout_constraintStart_toEndOf="@+id/person_photo"
-            card_view:layout_constraintTop_toBottomOf="@+id/person_name"
-            tools:text="17 years"
-            />
+            android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageViewSocialVKontakte"
+            android:id="@+id/imageViewTrashCan"
             style="@style/WrapContent.Right"
-            app:srcCompat="@drawable/ic_trash"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/trash_can"
-            card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:srcCompat="@drawable/ic_trash" />
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
