@@ -50,4 +50,7 @@
     <string name="ladislaw_pszczelarz">Ladislaw Pszczelarz</string>
     <string name="trash_can">trash can</string>
     <string name="log_out">Log out</string>
+    <string name="contacts">Contacts</string>
+    <string name="arrow_back">arrow back</string>
+    <string name="search">search</string>
 </resources>

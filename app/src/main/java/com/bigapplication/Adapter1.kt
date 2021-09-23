@@ -30,10 +30,6 @@ class Adapter1 internal constructor(var persons: List<Person>) :
             personName = itemView.findViewById(R.id.person_name)
             personAge = itemView.findViewById(R.id.person_age)
             personPhoto = itemView.findViewById(R.id.person_photo) as ImageView
-            Glide.with(personPhoto)
-                .load("https://i.pravatar.cc")
-                .circleCrop()
-                .into(personPhoto)
 
         }
     }
@@ -51,11 +47,12 @@ class Adapter1 internal constructor(var persons: List<Person>) :
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, i: Int) {
         personViewHolder.personName.text = persons[i].name
         personViewHolder.personAge.text = persons[i].age
-/*        Glide.with(personViewHolder.personPhoto)
-            .load("https://i.pravatar.cc/")
+        Glide.with(personViewHolder.personPhoto)
+            .load("https://i.pravatar.cc/300?img=$i")
+            .error(persons[i].photoId)
             .circleCrop()
-            .into(personViewHolder.personPhoto)*/
-        personViewHolder.personPhoto.setImageResource(persons[i].photoId)
+            .into(personViewHolder.personPhoto)
+//        personViewHolder.personPhoto.setImageResource(persons[i].photoId)
     }
 
     override fun getItemCount(): Int {
