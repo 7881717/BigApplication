@@ -64,6 +64,16 @@ class LoggedActivity : AppCompatActivity() {
 
         }
 
+        binding.imageViewSocialLinkedin.setOnClickListener {
+
+                val intent = Intent(this, TemporaryActivity::class.java)
+
+                // Contacts Activity start
+                startActivity(intent)
+                finish()
+
+        }
+
         binding.buttonViewMyContacts.setOnClickListener {
 
                 val intent = Intent(this, Contacts1Activity::class.java)
