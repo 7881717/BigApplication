@@ -21,13 +21,13 @@ class Adapter1 internal constructor(var persons: List<Person>) :
     class PersonViewHolder internal constructor(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         var cv: CardView
-        var personName: TextView
+        var personNameSurname: TextView
         var personAge: TextView
         var personPhoto: ImageView
 
         init {
             cv = itemView.findViewById(R.id.cv)
-            personName = itemView.findViewById(R.id.person_name)
+            personNameSurname = itemView.findViewById(R.id.person_name_surname)
             personAge = itemView.findViewById(R.id.person_age)
             personPhoto = itemView.findViewById(R.id.person_photo) as ImageView
 
@@ -45,8 +45,8 @@ class Adapter1 internal constructor(var persons: List<Person>) :
     }
 
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, i: Int) {
-        personViewHolder.personName.text = persons[i].name
-        personViewHolder.personAge.text = persons[i].age
+        personViewHolder.personNameSurname.text = persons[i].name + " " + persons[i].surname
+        personViewHolder.personAge.text = persons[i].career
         Glide.with(personViewHolder.personPhoto)
             .load("https://i.pravatar.cc/300?img=$i")
             .error(persons[i].photoId)

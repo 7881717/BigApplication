@@ -53,4 +53,9 @@
     <string name="contacts">Contacts</string>
     <string name="arrow_back">arrow back</string>
     <string name="search">search</string>
+    <string name="add_new_contact">Add new contact:</string>
+    <string name="type_name_here">type name here</string>
+    <string name="type_surname_here">type surname here</string>
+    <string name="type_career_here">type career here</string>
+    <string name="add_contacts">Add contacts</string>
 </resources>

@@ -22,7 +22,7 @@
             android:layout_marginEnd="16dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/person_name"
+            android:id="@+id/person_name_surname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -34,7 +34,7 @@
             android:id="@+id/person_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/person_name"
+            android:layout_below="@+id/person_name_surname"
             android:layout_toEndOf="@+id/person_photo"
             android:textColor="@color/black" />
 
@@ -42,7 +42,6 @@
             android:id="@+id/imageViewTrashCan"
             style="@style/WrapContent.Right"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
             android:contentDescription="@string/trash_can"
             app:srcCompat="@drawable/ic_trash" />
     </RelativeLayout>

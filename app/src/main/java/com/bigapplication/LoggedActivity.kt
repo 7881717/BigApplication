@@ -80,7 +80,7 @@ class LoggedActivity : AppCompatActivity() {
 
                 // Contacts Activity start
                 startActivity(intent)
-                finish()
+//                finish()
 
         }
     }

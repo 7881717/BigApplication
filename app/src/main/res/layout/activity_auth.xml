@@ -34,7 +34,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextEmail"
-        style="@style/EditText"
+        style="@style/EditText.White"
         android:autofillHints="e-mail"
         android:hint="@string/type_e_mail_here"
         android:inputType="textEmailAddress"
@@ -50,7 +50,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextPassword"
-        style="@style/EditText"
+        style="@style/EditText.White"
         android:autofillHints="password"
         android:hint="@string/type_password_here"
         android:inputType="textPassword"

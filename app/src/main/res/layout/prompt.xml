@@ -7,19 +7,31 @@
     android:orientation="vertical"
     android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Напишите текст: "
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        style="@style/WrapContent.Left"
         android:textColor="@color/black"
+        android:text="@string/add_new_contact"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/input_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        <requestFocus />
-    </EditText>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextName"
+        style="@style/EditText"
+        android:autofillHints="name"
+        android:hint="@string/type_name_here"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextSurname"
+        style="@style/EditText"
+        android:autofillHints="surname"
+        android:hint="@string/type_surname_here"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCareer"
+        style="@style/EditText"
+        android:autofillHints="career"
+        android:hint="@string/type_career_here"/>
+
+
 
 </LinearLayout>

@@ -28,14 +28,14 @@ class Contacts1Activity : Activity() {
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
         rv?.layoutManager = llm
+
         initializeData()
         initializeAdapter()
-
         //Инициализируем элементы:
         addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
         finalText = findViewById<View>(R.id.final_text) as TextView
 
-        //Добавляем слушателя нажатий по кнопке Button:
+        //Добавляем слушателя нажатий по ссылке addLink:
         addLink?.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
             val li = LayoutInflater.from(context)
             val promptsView = li.inflate(R.layout.prompt, null)
@@ -47,7 +47,9 @@ class Contacts1Activity : Activity() {
             mDialogBuilder.setView(promptsView)
 
             //Настраиваем отображение поля для ввода текста в открытом диалоге:
-            val userInput = promptsView.findViewById<View>(R.id.input_text) as EditText
+            val userName = promptsView.findViewById<View>(R.id.editTextName) as EditText
+            val userSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
+            val userCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
 
             //Настраиваем сообщение в диалоговом окне:
             mDialogBuilder
@@ -56,7 +58,14 @@ class Contacts1Activity : Activity() {
                 .setPositiveButton(
                     "OK"
                 ) { dialog, id -> //Вводим текст и отображаем в строке ввода на основном экране:
-                    finalText?.text = userInput.text
+                    finalText?.text = userName.text
+                    persons?.add(
+                        Person(userName.text.toString(),
+                            userSurname.text.toString(),
+                            userCareer.text.toString(),
+                            R.drawable.brazilia)
+                    )
+                    initializeAdapter()
                 }
                 .setNegativeButton(
                     "Отмена"
@@ -74,11 +83,11 @@ class Contacts1Activity : Activity() {
 
     private fun initializeData() {
         persons = ArrayList()
-        repeat(7) {
-            persons?.add(Person("Emma Wilson", "23 years old", R.drawable.emma))
-            persons?.add(Person("Ann Lace", "25 years old", R.drawable.lavery))
-            persons?.add(Person("Lillie Watts", "35 years old", R.drawable.lillie))
-            persons?.add(Person("Columbia", "202 years old", R.drawable.columbia))
+        repeat(2) {
+            persons?.add(Person("Emma", "Wilson", "nice girl", R.drawable.emma))
+            persons?.add(Person("Ann", "Lace", "ordinary girl", R.drawable.lavery))
+            persons?.add(Person("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+            persons?.add(Person("Columbia", ", the country of", "best country", R.drawable.columbia))
         }
     }
 

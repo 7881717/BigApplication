@@ -34,7 +34,7 @@ class TemporaryActivity : AppCompatActivity() {
             mDialogBuilder.setView(promptsView)
 
             //Настраиваем отображение поля для ввода текста в открытом диалоге:
-            val userInput = promptsView.findViewById<View>(R.id.input_text) as EditText
+            val userInput = promptsView.findViewById<View>(R.id.editTextName) as EditText
 
             //Настраиваем сообщение в диалоговом окне:
             mDialogBuilder

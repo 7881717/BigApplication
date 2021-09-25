@@ -47,9 +47,12 @@
     <style name="EditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/light_gray</item>
         <item name="android:textSize">@dimen/edit_text</item>
+    </style>
+
+    <style name="EditText.White">
+        <item name="android:textColor">@color/white</item>
         <item name="layout_constraintStart_toStartOf">parent</item>
         <item name="layout_constraintEnd_toEndOf">parent</item>
     </style>
