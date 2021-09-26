@@ -47,9 +47,9 @@ class Contacts1Activity : Activity() {
             mDialogBuilder.setView(promptsView)
 
             //Настраиваем отображение поля для ввода текста в открытом диалоге:
-            val userName = promptsView.findViewById<View>(R.id.editTextName) as EditText
-            val userSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
-            val userCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
+            val newName = promptsView.findViewById<View>(R.id.editTextName) as EditText
+            val newSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
+            val newCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
 
             //Настраиваем сообщение в диалоговом окне:
             mDialogBuilder
@@ -58,11 +58,11 @@ class Contacts1Activity : Activity() {
                 .setPositiveButton(
                     "OK"
                 ) { dialog, id -> //Вводим текст и отображаем в строке ввода на основном экране:
-                    finalText?.text = userName.text
+                    finalText?.text = newName.text
                     persons?.add(
-                        Person(userName.text.toString(),
-                            userSurname.text.toString(),
-                            userCareer.text.toString(),
+                        Person(newName.text.toString(),
+                            newSurname.text.toString(),
+                            newCareer.text.toString(),
                             R.drawable.brazilia)
                     )
                     initializeAdapter()
