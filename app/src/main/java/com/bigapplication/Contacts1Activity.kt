@@ -31,6 +31,7 @@ class Contacts1Activity : Activity() {
 
         initializeData()
         initializeAdapter()
+        
         //Инициализируем элементы:
         addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
         finalText = findViewById<View>(R.id.final_text) as TextView
