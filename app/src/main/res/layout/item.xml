@@ -23,8 +23,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/person_name_surname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/WrapContent"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/person_photo"
             android:textColor="@color/black"
@@ -32,8 +31,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/person_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/WrapContent"
             android:layout_below="@+id/person_name_surname"
             android:layout_toEndOf="@+id/person_photo"
             android:textColor="@color/black" />

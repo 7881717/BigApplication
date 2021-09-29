@@ -25,19 +25,51 @@ class MainActivity : AppCompatActivity() {
             // data for next activity
             intent.putExtra("UserEmail", settings?.getString(Preferences.PREF_NAME, "empty"))
 
-
             // Logged Activity start
             startActivity(intent)
             finish()
         }
 
         // Login button
+        login()
+
+        // tap forgot password
+        forgotPassword()
+
+        // tap sign up
+        signUp()
+
+        // tap title to test sharedPrefs
+        binding.textViewTitle.setOnClickListener {
+            // Auth Activity start
+            val intent = Intent(this, SaverActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun signUp() {
+        binding.textViewSignUp.setOnClickListener {
+
+            // Auth Activity start
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun forgotPassword() {
+        binding.textViewForgotPassword.setOnClickListener {
+            // Restore Activity start
+            val intent = Intent(this, RestoreActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun login() {
         binding.buttonLogin.setOnClickListener {
-
-
             if (emailChecker() && passwordChecker()) {
-
-
                 if (binding.checkBoxRememberMe.isChecked) {
                     val prefEditor = settings?.edit()
                     prefEditor?.putString(
@@ -58,33 +90,6 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
-
-        // tap forgot password
-        binding.textViewForgotPassword.setOnClickListener {
-
-            // Restore Activity start
-            val intent = Intent(this, RestoreActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        // tap sign up
-        binding.textViewSignUp.setOnClickListener {
-
-            // Auth Activity start
-            val intent = Intent(this, AuthActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        // tap sign up
-        binding.textViewTitle.setOnClickListener {
-
-            // Auth Activity start
-            val intent = Intent(this, SaverActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
     }
 
     private fun emailChecker(): Boolean {

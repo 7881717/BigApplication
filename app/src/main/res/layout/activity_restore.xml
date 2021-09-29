@@ -8,14 +8,12 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewRestoreTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
+        android:layout_marginTop="@dimen/max_vertical_margin"
         android:text="@string/restore_your_password"
         android:textSize="@dimen/title_text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/max_vertical_margin"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

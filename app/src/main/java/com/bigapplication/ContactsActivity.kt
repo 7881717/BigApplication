@@ -14,7 +14,7 @@ import android.widget.TextView
 import android.view.LayoutInflater
 import android.widget.EditText
 
-class Contacts1Activity : Activity() {
+class ContactsActivity : Activity() {
     private var persons: MutableList<Person>? = null
     private var rv: RecyclerView? = null
 
@@ -24,17 +24,16 @@ class Contacts1Activity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contacts1)
+        setContentView(R.layout.activity_contacts)
         rv = findViewById<View>(R.id.rv) as RecyclerView
         val llm = LinearLayoutManager(this)
         rv?.layoutManager = llm
 
         initializeData()
         initializeAdapter()
-        
+
         //Инициализируем элементы:
         addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
-        finalText = findViewById<View>(R.id.final_text) as TextView
 
         //Добавляем слушателя нажатий по ссылке addLink:
         addLink?.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
@@ -59,12 +58,13 @@ class Contacts1Activity : Activity() {
                 .setPositiveButton(
                     "OK"
                 ) { dialog, id -> //Вводим текст и отображаем в строке ввода на основном экране:
-                    finalText?.text = newName.text
                     persons?.add(
-                        Person(newName.text.toString(),
+                        Person(
+                            newName.text.toString(),
                             newSurname.text.toString(),
                             newCareer.text.toString(),
-                            R.drawable.brazilia)
+                            R.drawable.brazilia
+                        )
                     )
                     initializeAdapter()
                 }
@@ -88,12 +88,19 @@ class Contacts1Activity : Activity() {
             persons?.add(Person("Emma", "Wilson", "nice girl", R.drawable.emma))
             persons?.add(Person("Ann", "Lace", "ordinary girl", R.drawable.lavery))
             persons?.add(Person("Lillie", "Watts", "pretty woman", R.drawable.lillie))
-            persons?.add(Person("Columbia", ", the country of", "best country", R.drawable.columbia))
+            persons?.add(
+                Person(
+                    "Columbia",
+                    ", the country of",
+                    "best country",
+                    R.drawable.columbia
+                )
+            )
         }
     }
 
-    private fun initializeAdapter() {
-        val adapter = Adapter1(persons!!)
+    public fun initializeAdapter() {
+        val adapter = Adapter(persons!!)
         rv?.adapter = adapter
     }
 }

@@ -31,57 +31,35 @@ class LoggedActivity : AppCompatActivity() {
         // first name parser
         val preName = userEmail?.substringBefore("@")
         val first = preName?.substringBefore('.')
-            ?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault())
-            else it.toString() }
+            ?.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(Locale.getDefault())
+                else it.toString()
+            }
 
         // second name parser
         val preLast = preName?.substringAfter('.')
         val last = preLast?.substringBefore('.')
-            ?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault())
-            else it.toString() }
+            ?.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(Locale.getDefault())
+                else it.toString()
+            }
 
         // show parsed names
         val toShow = "$first $last"
         binding.textViewUserName.text = toShow
 
-
         binding.textViewLogOut.setOnClickListener {
-
-                val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             getSharedPreferences(Preferences.PREFS_FILE, MODE_PRIVATE)?.edit()?.clear()?.commit()
-                // Contacts Activity start
-                startActivity(intent)
-                finish()
-
-        }
-        binding.imageViewSocialFacebook.setOnClickListener {
-
-                val intent = Intent(this, Contacts2Activity::class.java)
-
-                // Contacts Activity start
-                startActivity(intent)
-                finish()
-
-        }
-
-        binding.imageViewSocialLinkedin.setOnClickListener {
-
-                val intent = Intent(this, TemporaryActivity::class.java)
-
-                // Contacts Activity start
-                startActivity(intent)
-                finish()
-
+            startActivity(intent)
+            finish()
         }
 
         binding.buttonViewMyContacts.setOnClickListener {
-
-                val intent = Intent(this, Contacts1Activity::class.java)
-
-                // Contacts Activity start
-                startActivity(intent)
-//                finish()
-
+            val intent = Intent(this, ContactsActivity::class.java)
+            // Contacts Activity start
+            startActivity(intent)
+            finish()
         }
     }
 }

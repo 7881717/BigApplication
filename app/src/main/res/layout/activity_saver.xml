@@ -6,52 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".SaverActivity">
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/nameBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/type_name_here"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/saveButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="saveName"
+        android:text="@string/save_to_sharedpreferences"
+        app:layout_constraintBottom_toTopOf="@id/nameView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameBox" />
 
-<EditText
-    android:id="@+id/nameBox"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:hint="Введите имя"
-    android:textColor="@color/white"
-    app:layout_constraintBottom_toTopOf="@id/saveButton"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/getButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveButton" />
 
-<Button
-    android:id="@+id/saveButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Сохранить"
-    android:onClick="saveName"
-    app:layout_constraintBottom_toTopOf="@id/nameView"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/nameBox"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getName"
+        android:text="@string/get_from_sharedpreferences"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameView" />
 
-<TextView
-    android:id="@+id/nameView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="18sp"
-    app:layout_constraintBottom_toTopOf="@id/getButton"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/saveButton"/>
-<Button
-    android:id="@+id/getButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Получить имя"
-    android:onClick="getName"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/nameView"/>
-<Button
-    android:id="@+id/eraseButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Erase имя"
-    android:onClick="eraseName"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/getButton"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eraseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="eraseName"
+        android:text="@string/erase_from_sharedpreferences"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/getButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,16 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BigApplication">
         <activity
-            android:name=".TemporaryActivity"
-            android:exported="true" />
-        <activity
             android:name=".SaverActivity"
             android:exported="true" />
         <activity
-            android:name=".Contacts2Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Contacts1Activity"
+            android:name=".ContactsActivity"
             android:exported="true" />
         <activity
             android:name=".LoggedActivity"

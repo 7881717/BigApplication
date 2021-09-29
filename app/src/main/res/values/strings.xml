@@ -1,19 +1,4 @@
 <resources>
-    <string-array name="cat_names">
-        <item>Рыжик</item>
-        <item>Барсик</item>
-        <item>Мурзик</item>
-        <item>Мурка</item>
-        <item>Йоша</item>
-        <item>Масяня</item>
-        <item>Кабася</item>
-        <item>Пушок</item>
-        <item>Дымка</item>
-        <item>Кузя</item>
-        <item>Китти</item>
-        <item>Котяня</item>
-        <item>Симба</item>
-    </string-array>
     <string name="app_name">BigApplication</string>
     <string name="login">LOGIN</string>
     <string name="don_t_have_account">Don’t have account?</string>
@@ -47,7 +32,6 @@
     <string name="facebook">Facebook</string>
     <string name="linkedin">Linkedin</string>
     <string name="imageview_flag">imageViewFlag</string>
-    <string name="ladislaw_pszczelarz">Ladislaw Pszczelarz</string>
     <string name="trash_can">trash can</string>
     <string name="log_out">Log out</string>
     <string name="contacts">Contacts</string>
@@ -58,4 +42,8 @@
     <string name="type_surname_here">type surname here</string>
     <string name="type_career_here">type career here</string>
     <string name="add_contacts">Add contacts</string>
+    <string name="save_to_sharedpreferences">SAVE the name TO SharedPreferences</string>
+    <string name="get_from_sharedpreferences">GET the name FROM SharedPreferences</string>
+    <string name="erase_from_sharedpreferences">ERASE the name FROM SharedPreferences</string>
+    <string name="ladislaw_pszczelarz">Ladislaw Pszczelarz</string>
 </resources>
