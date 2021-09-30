@@ -1,9 +1,13 @@
-package com.bigapplication
+package com.bigapplication.ui.logged
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.bigapplication.R
 import com.bigapplication.databinding.ActivityLoggedBinding
+import com.bigapplication.ui.contacts.ContactsActivity
+import com.bigapplication.ui.main.MainActivity
+import com.bigapplication.utils.Preferences
 import com.bumptech.glide.Glide
 import java.util.*
 

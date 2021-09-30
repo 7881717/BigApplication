@@ -1,6 +1,6 @@
-package com.bigapplication
+package com.bigapplication.model
 
-class Person(
+class User(
     var name: String,
     var surname: String,
     var career: String,

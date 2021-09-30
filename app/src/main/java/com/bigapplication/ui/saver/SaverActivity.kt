@@ -1,10 +1,11 @@
-package com.bigapplication
+package com.bigapplication.ui.saver
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.SharedPreferences
+import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.bigapplication.databinding.ActivitySaverBinding
+import com.bigapplication.utils.Preferences
 
 
 class SaverActivity : AppCompatActivity() {

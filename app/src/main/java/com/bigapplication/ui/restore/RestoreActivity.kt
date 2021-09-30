@@ -1,7 +1,8 @@
-package com.bigapplication
+package com.bigapplication.ui.restore
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.bigapplication.R
 
 class RestoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

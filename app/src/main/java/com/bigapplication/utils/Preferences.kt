@@ -1,4 +1,4 @@
-package com.bigapplication
+package com.bigapplication.utils
 
 object Preferences {
     internal const val PREFS_FILE = "Account"

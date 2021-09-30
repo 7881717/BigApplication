@@ -15,26 +15,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BigApplication">
         <activity
-            android:name=".SaverActivity"
+            android:name=".ui.saver.SaverActivity"
             android:exported="true" />
         <activity
-            android:name=".ContactsActivity"
+            android:name=".ui.contacts.ContactsActivity"
             android:exported="true" />
         <activity
-            android:name=".LoggedActivity"
+            android:name=".ui.logged.LoggedActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".RestoreActivity"
+            android:name=".ui.restore.RestoreActivity"
             android:exported="true" />
         <activity
-            android:name=".AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

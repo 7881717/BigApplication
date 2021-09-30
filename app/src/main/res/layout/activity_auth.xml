@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/MatchParent.SideMargin"
-    tools:context=".AuthActivity"
+    tools:context=".ui.auth.AuthActivity"
     tools:ignore="MissingConstraints">
 
     <androidx.constraintlayout.widget.Guideline

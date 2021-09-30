@@ -1,18 +1,23 @@
-package com.bigapplication
+package com.bigapplication.ui.main
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.bigapplication.R
 import com.bigapplication.databinding.ActivityMainBinding
+import com.bigapplication.ui.auth.AuthActivity
+import com.bigapplication.ui.logged.LoggedActivity
+import com.bigapplication.ui.restore.RestoreActivity
+import com.bigapplication.ui.saver.SaverActivity
+import com.bigapplication.utils.Preferences
 
 
 class MainActivity : AppCompatActivity() {
     private var settings: SharedPreferences? = null
 
-    @SuppressLint("CutPasteId")
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
