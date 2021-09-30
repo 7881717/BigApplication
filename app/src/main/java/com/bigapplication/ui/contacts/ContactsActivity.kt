@@ -37,15 +37,15 @@ class ContactsActivity : Activity(), IContactClickListener {
 
 //        initializeAdapter()
 
-        //Инициализируем элементы:
-        addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
-
         //Добавляем слушателя нажатий по ссылке addLink:
         setListeners()
 
     }
 
     private fun setListeners() {
+
+        //Инициализируем элементы:
+        addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
         addLink?.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
             val li = LayoutInflater.from(context)
             val promptsView = li.inflate(R.layout.prompt, null)
