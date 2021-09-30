@@ -77,6 +77,8 @@ class ContactsActivity : Activity(), IContactClickListener {
                         )
                     )
     //                    initializeAdapter()
+                    // перерисовываем ресайклер
+                    initRecycler()
                 }
                 .setNegativeButton(
                     "Отмена"
@@ -87,7 +89,9 @@ class ContactsActivity : Activity(), IContactClickListener {
 
             //и отображаем его:
             alertDialog.show()
+
         }
+
     }
 
     private fun initRecycler() {

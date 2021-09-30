@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.saver.SaverActivity">
+    style="@style/MatchParent">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/nameBox"
@@ -17,10 +14,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:onClick="saveName"
         android:text="@string/save_to_sharedpreferences"
         app:layout_constraintBottom_toTopOf="@id/nameView"
@@ -29,26 +25,23 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/getButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/saveButton" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/getButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:onClick="getName"
         android:text="@string/get_from_sharedpreferences"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameView" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/eraseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/WrapContent"
         android:onClick="eraseName"
         android:text="@string/erase_from_sharedpreferences"
         app:layout_constraintLeft_toLeftOf="parent"
