@@ -37,15 +37,15 @@ class ContactsActivity : Activity(), IContactClickListener {
 
 //        initializeAdapter()
 
-        //Инициализируем элементы:
-        addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
-
         //Добавляем слушателя нажатий по ссылке addLink:
         setListeners()
 
     }
 
     private fun setListeners() {
+
+        //Инициализируем элементы:
+        addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
         addLink?.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
             val li = LayoutInflater.from(context)
             val promptsView = li.inflate(R.layout.prompt, null)
@@ -63,7 +63,7 @@ class ContactsActivity : Activity(), IContactClickListener {
 
             //Настраиваем сообщение в диалоговом окне:
             mDialogBuilder
-                //                .setTitle("Add contact")
+    //                .setTitle("Add contact")
                 .setCancelable(true)
                 .setPositiveButton(
                     "OK"
@@ -76,7 +76,9 @@ class ContactsActivity : Activity(), IContactClickListener {
                             R.drawable.brazilia
                         )
                     )
-                    //                    initializeAdapter()
+    //                    initializeAdapter()
+                    // перерисовываем ресайклер
+                    initRecycler()
                 }
                 .setNegativeButton(
                     "Отмена"
@@ -87,7 +89,9 @@ class ContactsActivity : Activity(), IContactClickListener {
 
             //и отображаем его:
             alertDialog.show()
+
         }
+
     }
 
     private fun initRecycler() {
@@ -104,24 +108,25 @@ class ContactsActivity : Activity(), IContactClickListener {
     override fun removeContact(position: Int) {
         // trash can clicked.
         users?.removeAt(position)
-        (rv?.adapter as ContactsAdapter).updateItems(users ?: return)
+        rv?.adapter?.notifyItemRemoved(position)
+        rv?.adapter?.notifyItemRangeChanged(position, users?.size ?: -1)
     }
 
 
     private fun initializeData() {
         users = ArrayList()
 
-        users?.add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
-        users?.add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
-        users?.add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
-        users?.add(
-            User(
-                "Columbia",
-                ", the country of",
-                "best country",
-                R.drawable.columbia
+            users?.add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
+            users?.add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
+            users?.add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+            users?.add(
+                User(
+                    "Columbia",
+                    ", the country of",
+                    "best country",
+                    R.drawable.columbia
+                )
             )
-        )
 
     }
 
