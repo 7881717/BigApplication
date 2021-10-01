@@ -40,6 +40,7 @@ class ContactsAdapter internal constructor(
         val diffResult: DiffResult =
             DiffUtil.calculateDiff(ContactDiffUtilCallback(users, newDataset))
         diffResult.dispatchUpdatesTo(this)
+        notifyDataSetChanged()
         users.clear()
         users.addAll(newDataset)
     }

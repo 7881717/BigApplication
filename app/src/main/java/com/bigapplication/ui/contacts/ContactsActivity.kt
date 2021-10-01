@@ -13,21 +13,20 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bigapplication.R
+import com.bigapplication.databinding.ActivityContactsBinding
 import com.bigapplication.model.User
 import com.bigapplication.ui.contacts.adapter.ContactsAdapter
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 
 class ContactsActivity : Activity(), IContactClickListener {
     private var users: MutableList<User>? = null
-    private var rv: RecyclerView? = null
-
-    val context: Context = this
-    private var addLink: TextView? = null
+    private lateinit var adapter: ContactsAdapter
+    private lateinit var binding: ActivityContactsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contacts)
-
+        binding = ActivityContactsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initializeData()
         initRecycler()
 
@@ -45,13 +44,12 @@ class ContactsActivity : Activity(), IContactClickListener {
     private fun setListeners() {
 
         //Инициализируем элементы:
-        addLink = findViewById<View>(R.id.textViewAddContacts) as TextView
-        addLink?.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
-            val li = LayoutInflater.from(context)
+        binding.textViewAddContacts.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
+            val li = LayoutInflater.from(applicationContext)
             val promptsView = li.inflate(R.layout.prompt, null)
 
             //Создаем AlertDialog
-            val mDialogBuilder = AlertDialog.Builder(context)
+            val mDialogBuilder = AlertDialog.Builder(applicationContext)
 
             //Настраиваем prompt.xml для нашего AlertDialog:
             mDialogBuilder.setView(promptsView)
@@ -78,7 +76,7 @@ class ContactsActivity : Activity(), IContactClickListener {
                     )
                     //                    initializeAdapter()
                     // перерисовываем ресайклер
-                    initRecycler()
+                    adapter.updateItems(users?: return@setPositiveButton)
                 }
                 .setNegativeButton(
                     "Отмена"
@@ -95,20 +93,19 @@ class ContactsActivity : Activity(), IContactClickListener {
     }
 
     private fun initRecycler() {
-        rv = findViewById<View>(R.id.recyclerViewContacts) as RecyclerView
-
-        rv?.layoutManager = LinearLayoutManager(
-            context,
+        binding.recyclerViewContacts.layoutManager = LinearLayoutManager(
+            applicationContext,
             LinearLayoutManager.VERTICAL,
             false
         )
-        rv?.adapter = ContactsAdapter(users ?: ArrayList(), onIContactClickListener = this)
+        adapter = ContactsAdapter(users ?: ArrayList(), onIContactClickListener = this)
+        binding.recyclerViewContacts.adapter = adapter
     }
 
     override fun removeContact(position: Int) {
         // trash can clicked.
         users?.removeAt(position)
-        (rv?.adapter as ContactsAdapter).updateItems(users ?: return)
+        adapter.updateItems(users ?: return)
     }
 
 
@@ -128,9 +125,4 @@ class ContactsActivity : Activity(), IContactClickListener {
         )
 
     }
-
-//    private fun initializeAdapter() {
-//        val adapter = ContactsAdapter(users!!)
-//        rv?.adapter = adapter
-//    }
 }
