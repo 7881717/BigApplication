@@ -63,7 +63,7 @@ class ContactsActivity : Activity(), IContactClickListener {
 
             //Настраиваем сообщение в диалоговом окне:
             mDialogBuilder
-    //                .setTitle("Add contact")
+                //                .setTitle("Add contact")
                 .setCancelable(true)
                 .setPositiveButton(
                     "OK"
@@ -76,7 +76,7 @@ class ContactsActivity : Activity(), IContactClickListener {
                             R.drawable.brazilia
                         )
                     )
-    //                    initializeAdapter()
+                    //                    initializeAdapter()
                     // перерисовываем ресайклер
                     initRecycler()
                 }
@@ -108,25 +108,24 @@ class ContactsActivity : Activity(), IContactClickListener {
     override fun removeContact(position: Int) {
         // trash can clicked.
         users?.removeAt(position)
-        rv?.adapter?.notifyItemRemoved(position)
-        rv?.adapter?.notifyItemRangeChanged(position, users?.size ?: -1)
+        (rv?.adapter as ContactsAdapter).updateItems(users ?: return)
     }
 
 
     private fun initializeData() {
         users = ArrayList()
 
-            users?.add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
-            users?.add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
-            users?.add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
-            users?.add(
-                User(
-                    "Columbia",
-                    ", the country of",
-                    "best country",
-                    R.drawable.columbia
-                )
+        users?.add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
+        users?.add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
+        users?.add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+        users?.add(
+            User(
+                "Columbia",
+                ", the country of",
+                "best country",
+                R.drawable.columbia
             )
+        )
 
     }
 
