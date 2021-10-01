@@ -7,6 +7,10 @@ import com.bigapplication.databinding.ItemBinding
 import com.bigapplication.model.User
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import com.bigapplication.ui.contacts.adapter.viewholder.PersonViewHolder
+import java.util.*
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DiffUtil.DiffResult
+
 
 class ContactsAdapter internal constructor(
     private val users: MutableList<User>,
@@ -30,5 +34,13 @@ class ContactsAdapter internal constructor(
 
     override fun getItemCount(): Int {
         return users.size
+    }
+
+    fun updateItems(newDataset: MutableList<User>) {
+        val diffResult: DiffResult =
+            DiffUtil.calculateDiff(ContactDiffUtilCallback(users, newDataset))
+        diffResult.dispatchUpdatesTo(this)
+        users.clear()
+        users.addAll(newDataset)
     }
 }

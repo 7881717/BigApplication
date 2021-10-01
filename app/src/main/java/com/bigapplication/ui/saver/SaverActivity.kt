@@ -16,14 +16,25 @@ class SaverActivity : AppCompatActivity() {
         binding = ActivitySaverBinding.inflate(layoutInflater)
         setContentView(binding.root)
         settings = getSharedPreferences(Preferences.PREFS_FILE, MODE_PRIVATE)
+
+        setListeners()
     }
 
-    fun saveName(view: View?) {
-        // получаем введенное имя и сохраняем его в настройках
-        val prefEditor = settings?.edit()
-        prefEditor?.putString(Preferences.PREF_NAME, binding.nameBox.text.toString())
-        prefEditor?.commit()
+    private fun setListeners() {
+        binding.saveButton.setOnClickListener {
+            // получаем введенное имя и сохраняем его в настройках
+            val prefEditor = settings?.edit()
+            prefEditor?.putString(Preferences.PREF_NAME, binding.nameBox.text.toString())
+            prefEditor?.commit()
+        }
     }
+//
+//    fun saveName(view: View?) {
+//        // получаем введенное имя и сохраняем его в настройках
+//        val prefEditor = settings?.edit()
+//        prefEditor?.putString(Preferences.PREF_NAME, binding.nameBox.text.toString())
+//        prefEditor?.commit()
+//    }
 
     fun getName(view: View?) {
         // получаем сохраненное имя

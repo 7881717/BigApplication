@@ -21,7 +21,6 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="saveName"
         android:text="@string/save_to_sharedpreferences"
         app:layout_constraintBottom_toTopOf="@id/nameView"
         app:layout_constraintLeft_toLeftOf="parent"
