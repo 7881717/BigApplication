@@ -45,11 +45,11 @@ class ContactsActivity : Activity(), IContactClickListener {
 
         //Инициализируем элементы:
         binding.textViewAddContacts.setOnClickListener { //Получаем вид с файла prompt.xml, который применим для диалогового окна:
-            val li = LayoutInflater.from(applicationContext)
+            val li = LayoutInflater.from(this)
             val promptsView = li.inflate(R.layout.prompt, null)
 
             //Создаем AlertDialog
-            val mDialogBuilder = AlertDialog.Builder(applicationContext)
+            val mDialogBuilder = AlertDialog.Builder(this)
 
             //Настраиваем prompt.xml для нашего AlertDialog:
             mDialogBuilder.setView(promptsView)
@@ -76,7 +76,7 @@ class ContactsActivity : Activity(), IContactClickListener {
                     )
                     //                    initializeAdapter()
                     // перерисовываем ресайклер
-                    adapter.updateItems(users?: return@setPositiveButton)
+                    adapter.updateItems(users?: ArrayList())
                 }
                 .setNegativeButton(
                     "Отмена"
@@ -94,7 +94,7 @@ class ContactsActivity : Activity(), IContactClickListener {
 
     private fun initRecycler() {
         binding.recyclerViewContacts.layoutManager = LinearLayoutManager(
-            applicationContext,
+            this,
             LinearLayoutManager.VERTICAL,
             false
         )
