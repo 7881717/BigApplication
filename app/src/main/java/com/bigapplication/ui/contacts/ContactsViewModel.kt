@@ -21,18 +21,20 @@ class ContactsViewModel : ViewModel() {
         //fixme bug when screen rotates and new contacts are added
 //        usersListLiveData.value = mutableListOf()
         eventsLiveData.value = Events.LOADING
-        contactsListLiveData.value?.apply {
-            add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
-            add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
-            add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
-            add(
-                User(
-                    "Columbia",
-                    ", the country of",
-                    "best country",
-                    R.drawable.columbia
+        if (contactsListLiveData.value?.isNullOrEmpty() == true) {
+            contactsListLiveData.value?.apply {
+                add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
+                add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
+                add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+                add(
+                    User(
+                        "Columbia",
+                        ", the country of",
+                        "best country",
+                        R.drawable.columbia
+                    )
                 )
-            )
+            }
         }
 
         if(contactsListLiveData.value?.isNullOrEmpty() == true) {
