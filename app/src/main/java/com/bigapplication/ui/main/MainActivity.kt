@@ -130,5 +130,4 @@ class MainActivity : AppCompatActivity() {
         }
         return passwordCorrect
     }
-
 }

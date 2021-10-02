@@ -15,7 +15,7 @@ class PersonViewHolder internal constructor(
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bindTo(user: User, position: Int) {
+    fun bindTo(user: User) {
 
         val text = user.name + " " + user.surname
         binding.personNameSurname.text = text
@@ -23,15 +23,14 @@ class PersonViewHolder internal constructor(
 //      Glide except this: personPhoto.setImageResource(persons[i].photoId)
 
 
-        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$position", user.photoId)
+        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$absoluteAdapterPosition", user.photoId)
 
-
-        setListeners(position)
+        setListeners()
     }
 
-    private fun setListeners(position: Int) {
+    private fun setListeners() {
         binding.imageViewTrashCan.setOnClickListener {
-            onIContactClickListener.removeContact(position)
+            onIContactClickListener.removeContact(absoluteAdapterPosition)
         }
     }
 

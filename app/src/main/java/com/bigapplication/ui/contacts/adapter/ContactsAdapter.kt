@@ -30,7 +30,7 @@ class ContactsAdapter internal constructor(
     }
 
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, position: Int) {
-        personViewHolder.bindTo(users[position], position)
+        personViewHolder.bindTo(users[position])
     }
 
     override fun getItemCount(): Int {
