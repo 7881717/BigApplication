@@ -1,6 +1,7 @@
 package com.bigapplication.model
 
-class User(
+//fixme user data class!
+data class User(
     var name: String,
     var surname: String,
     var career: String,

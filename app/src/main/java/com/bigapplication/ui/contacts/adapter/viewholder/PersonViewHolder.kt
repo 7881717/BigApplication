@@ -1,9 +1,12 @@
 package com.bigapplication.ui.contacts.adapter.viewholder
 
+import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bigapplication.databinding.ItemBinding
 import com.bigapplication.model.User
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
+import com.bigapplication.utils.ext.loadImage
 import com.bumptech.glide.Glide
 
 class PersonViewHolder internal constructor(
@@ -18,11 +21,10 @@ class PersonViewHolder internal constructor(
         binding.personNameSurname.text = text
         binding.personAge.text = user.career
 //      Glide except this: personPhoto.setImageResource(persons[i].photoId)
-        Glide.with(binding.personPhoto)
-            .load("https://i.pravatar.cc/300?img=$position")
-            .error(user.photoId)
-            .circleCrop()
-            .into(binding.personPhoto)
+
+
+        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$position", user.photoId)
+
 
         setListeners(position)
     }
@@ -49,3 +51,4 @@ class PersonViewHolder internal constructor(
 //
 //    }
 }
+

@@ -46,4 +46,6 @@
     <string name="get_from_sharedpreferences">GET the name FROM SharedPreferences</string>
     <string name="erase_from_sharedpreferences">ERASE the name FROM SharedPreferences</string>
     <string name="ladislaw_pszczelarz">Ladislaw Pszczelarz</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.bigapplication.ui.contacts.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -40,7 +41,6 @@ class ContactsAdapter internal constructor(
         val diffResult: DiffResult =
             DiffUtil.calculateDiff(ContactDiffUtilCallback(users, newDataset))
         diffResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
         users.clear()
         users.addAll(newDataset)
     }

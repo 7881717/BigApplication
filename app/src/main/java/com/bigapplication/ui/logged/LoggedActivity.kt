@@ -52,6 +52,7 @@ class LoggedActivity : AppCompatActivity() {
         val toShow = "$first $last"
         binding.textViewUserName.text = toShow
 
+
         binding.textViewLogOut.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             getSharedPreferences(Preferences.PREFS_FILE, MODE_PRIVATE)?.edit()?.clear()?.commit()
