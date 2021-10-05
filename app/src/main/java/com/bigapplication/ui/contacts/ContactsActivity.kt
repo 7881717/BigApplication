@@ -10,14 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bigapplication.R
 import com.bigapplication.databinding.ActivityContactsBinding
-import com.bigapplication.model.User
+import com.bigapplication.model.Contact
 import com.bigapplication.ui.contacts.adapter.ContactsAdapter
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import android.util.Log
 
 import android.widget.Toast
 
-import android.view.Gravity
 import android.widget.Toast.LENGTH_SHORT
 
 
@@ -110,7 +109,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
                 "OK"
             ) { dialog, id -> //Вводим текст и отображаем в строке ввода на основном экране:
                 viewModel.addItem(
-                    User(
+                    Contact(
                         newName.text.toString(),
                         newSurname.text.toString(),
                         newCareer.text.toString(),

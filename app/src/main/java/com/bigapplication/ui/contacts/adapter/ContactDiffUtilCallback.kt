@@ -1,12 +1,12 @@
 package com.bigapplication.ui.contacts.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.bigapplication.model.User
+import com.bigapplication.model.Contact
 
 
 class ContactDiffUtilCallback(
-    private val oldList: List<User>,
-    private val newList: List<User>
+    private val oldList: List<Contact>,
+    private val newList: List<Contact>
 ) :
     DiffUtil.Callback() {
 
@@ -20,16 +20,16 @@ class ContactDiffUtilCallback(
 
     //fixme add id
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val oldUser: User = oldList[oldItemPosition]
-        val newUser: User = newList[newItemPosition]
-        return oldUser == newUser
+        val oldContact: Contact = oldList[oldItemPosition]
+        val newContact: Contact = newList[newItemPosition]
+        return oldContact == newContact
 //        return oldUser.id == newUser.id
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val oldUser: User = oldList[oldItemPosition]
-        val newUser: User = newList[newItemPosition]
-        return oldUser == newUser
+        val oldContact: Contact = oldList[oldItemPosition]
+        val newContact: Contact = newList[newItemPosition]
+        return oldContact == newContact
     }
 
 }

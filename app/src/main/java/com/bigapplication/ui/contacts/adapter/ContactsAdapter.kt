@@ -1,20 +1,18 @@
 package com.bigapplication.ui.contacts.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bigapplication.databinding.ItemBinding
-import com.bigapplication.model.User
+import com.bigapplication.model.Contact
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import com.bigapplication.ui.contacts.adapter.viewholder.PersonViewHolder
-import java.util.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.DiffUtil.DiffResult
 
 
 class ContactsAdapter internal constructor(
-    private val users: MutableList<User>,
+    private val contacts: MutableList<Contact>,
     private val onIContactClickListener: IContactClickListener
 ) :
     RecyclerView.Adapter<PersonViewHolder>() {
@@ -30,18 +28,18 @@ class ContactsAdapter internal constructor(
     }
 
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, position: Int) {
-        personViewHolder.bindTo(users[position])
+        personViewHolder.bindTo(contacts[position])
     }
 
     override fun getItemCount(): Int {
-        return users.size
+        return contacts.size
     }
 
-    fun updateItems(newDataset: MutableList<User>) {
+    fun updateItems(newDataset: MutableList<Contact>) {
         val diffResult: DiffResult =
-            DiffUtil.calculateDiff(ContactDiffUtilCallback(users, newDataset))
+            DiffUtil.calculateDiff(ContactDiffUtilCallback(contacts, newDataset))
         diffResult.dispatchUpdatesTo(this)
-        users.clear()
-        users.addAll(newDataset)
+        contacts.clear()
+        contacts.addAll(newDataset)
     }
 }

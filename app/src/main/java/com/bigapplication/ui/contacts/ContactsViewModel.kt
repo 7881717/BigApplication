@@ -1,15 +1,13 @@
 package com.bigapplication.ui.contacts
 
-import android.content.Context
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bigapplication.R
-import com.bigapplication.model.User
+import com.bigapplication.model.Contact
 
 class ContactsViewModel : ViewModel() {
 
-    val contactsListLiveData = MutableLiveData<MutableList<User>>(ArrayList())
+    val contactsListLiveData = MutableLiveData<MutableList<Contact>>(ArrayList())
     val eventsLiveData = MutableLiveData<Events>()
 
     //fixme move to utils
@@ -23,11 +21,11 @@ class ContactsViewModel : ViewModel() {
         eventsLiveData.value = Events.LOADING
         if (contactsListLiveData.value?.isNullOrEmpty() == true) {
             contactsListLiveData.value?.apply {
-                add(User("Emma", "Wilson", "nice girl", R.drawable.emma))
-                add(User("Ann", "Lace", "ordinary girl", R.drawable.lavery))
-                add(User("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+                add(Contact("Emma", "Wilson", "nice girl", R.drawable.emma))
+                add(Contact("Ann", "Lace", "ordinary girl", R.drawable.lavery))
+                add(Contact("Lillie", "Watts", "pretty woman", R.drawable.lillie))
                 add(
-                    User(
+                    Contact(
                         "Columbia",
                         ", the country of",
                         "best country",
@@ -44,8 +42,8 @@ class ContactsViewModel : ViewModel() {
         }
     }
 
-    fun addItem(user: User) {
-        contactsListLiveData.value?.add(user)
+    fun addItem(contact: Contact) {
+        contactsListLiveData.value?.add(contact)
         contactsListLiveData.value = contactsListLiveData.value
     }
 

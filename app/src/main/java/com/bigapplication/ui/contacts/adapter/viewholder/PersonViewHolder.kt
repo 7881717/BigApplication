@@ -1,10 +1,8 @@
 package com.bigapplication.ui.contacts.adapter.viewholder
 
-import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bigapplication.databinding.ItemBinding
-import com.bigapplication.model.User
+import com.bigapplication.model.Contact
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import com.bigapplication.utils.ext.loadImage
 import com.bumptech.glide.Glide
@@ -15,15 +13,15 @@ class PersonViewHolder internal constructor(
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bindTo(user: User) {
+    fun bindTo(contact: Contact) {
 
-        val text = user.name + " " + user.surname
+        val text = contact.name + " " + contact.surname
         binding.personNameSurname.text = text
-        binding.personAge.text = user.career
+        binding.personAge.text = contact.career
 //      Glide except this: personPhoto.setImageResource(persons[i].photoId)
 
 
-        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$absoluteAdapterPosition", user.photoId)
+        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$absoluteAdapterPosition", contact.photoId)
 
         setListeners()
     }
