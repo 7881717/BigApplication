@@ -1,4 +1,7 @@
-за вчера и сегодня потратил `10 часов`
-занимался апгрейдом компа
+за вчера и сегодня потратил `2 часа`
+учился на fandroid: 
+https://www.fandroid.info/urok-3-resursy-i-makety-ekrana-prilozheniya-constraintlayout-v-android-studio/
+и
+https://www.fandroid.info/urok-7-androiddev-na-kotlin-sohranenie-i-peredacha-sostoyaniya-aktiviti-pri-povorote-ustrojstva-onsaveinstancestate-ili-viewmodel-livedata-kotlin-android-extensions/
 код тут: https://github.com/7881717/BigApplication/tree/development
 план пройти ревью менторов
