@@ -29,6 +29,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         //todo implemented viewModel variable
 
         viewModel = ViewModelProvider(this).get(ContactsViewModel::class.java)

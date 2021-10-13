@@ -1,6 +1,7 @@
 package com.bigapplication.ui.restore
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bigapplication.R
 
@@ -11,7 +12,9 @@ class RestoreActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        println(object : Any() {}.javaClass.enclosingMethod?.name)
+        println("CALLED CALLBACK \"" + object : Any() {}.javaClass.enclosingMethod?.name + "\"")
+        val toast = Toast.makeText(applicationContext, "RestoreActivity CLOSED", Toast.LENGTH_SHORT)
+        toast.show()
         super.onDestroy()
     }
 }
