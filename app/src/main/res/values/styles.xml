@@ -40,7 +40,6 @@
     </style>
 
     <style name="WrapContent.Left.CheckBox">
-        <item name="android:layout_marginTop">@dimen/item_vertical_margin</item>
         <item name="android:textColor">@color/light_gray</item>
     </style>
 

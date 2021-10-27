@@ -28,7 +28,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewEmail"
         style="@style/WrapContent.Left.Light"
-        android:layout_marginTop="@dimen/big_vertical_margin"
+        android:layout_marginTop="@dimen/item_vertical_margin"
         android:text="@string/e_mail"
         app:layout_constraintTop_toBottomOf="@id/textViewAuthTitleDescriptor" />
 
@@ -61,6 +61,19 @@
         style="@style/WrapContent.Left.CheckBox"
         android:text="@string/remember_me"
         app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGoogle"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.BigButton"
+        android:text="Google"
+        app:layout_constraintBottom_toTopOf="@id/textViewOr" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewOr"
+        style="@style/WrapContent.Centered.Small"
+        android:gravity="center"
+        android:text="or"
+        app:layout_constraintBottom_toTopOf="@id/buttonRegister" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonRegister"

@@ -12,6 +12,6 @@
     <dimen name="max_vertical_margin">80dp</dimen>
     <dimen name="iconLogged">113dp</dimen>
 
-    <item name="guideline_weight" type="dimen" format="float">0.2</item>
+    <item name="guideline_weight" type="dimen" format="float">0.15</item>
     <item name="guideline_big_weight" type="dimen" format="float">0.4</item>
 </resources>

@@ -18,6 +18,7 @@ import android.util.Log
 import android.widget.Toast
 
 import android.widget.Toast.LENGTH_SHORT
+import com.bigapplication.utils.Events
 
 
 //todo I replaced activity to AppCompatActivity
@@ -30,10 +31,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
         binding = ActivityContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //todo implemented viewModel variable
-
         viewModel = ViewModelProvider(this).get(ContactsViewModel::class.java)
-        viewModel.initializeData()
 
         initRecycler()
         setObservers()
@@ -56,19 +54,19 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         viewModel.eventsLiveData.observe(this) {
             when (it) {
-                ContactsViewModel.Events.OK -> {
+                Events.OK -> {
                     val toast = Toast.makeText(applicationContext, "OK", LENGTH_SHORT)
                     toast.show()
                 }
-                ContactsViewModel.Events.LOADING_ERROR -> {
+                Events.LOADING_ERROR -> {
                     val toast = Toast.makeText(applicationContext, "LOADING ERROR", LENGTH_SHORT)
                     toast.show()
                 }
-                ContactsViewModel.Events.LOADING -> {
+                Events.LOADING -> {
                     //todo show ProgressBar
                     Log.d("Progress bar", "Progress bar")
                 }
-                ContactsViewModel.Events.INTERNET_ERROR -> {
+                Events.INTERNET_ERROR -> {
                     val toast = Toast.makeText(applicationContext, "INTERNET ERROR", LENGTH_SHORT)
                     toast.show()
                 }

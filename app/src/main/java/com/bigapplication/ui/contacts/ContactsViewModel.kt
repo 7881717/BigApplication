@@ -4,20 +4,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bigapplication.R
 import com.bigapplication.model.Contact
+import com.bigapplication.utils.Events
 
 class ContactsViewModel : ViewModel() {
 
     val contactsListLiveData = MutableLiveData<MutableList<Contact>>(ArrayList())
     val eventsLiveData = MutableLiveData<Events>()
 
-    //fixme move to utils
-    enum class Events {
-        OK, INTERNET_ERROR, LOADING_ERROR, LOADING
-    }
-
-    fun initializeData() {
-        //fixme bug when screen rotates and new contacts are added
-//        usersListLiveData.value = mutableListOf()
+    init {
+        //        usersListLiveData.value = mutableListOf()
         eventsLiveData.value = Events.LOADING
         if (contactsListLiveData.value?.isNullOrEmpty() == true) {
             contactsListLiveData.value?.apply {
