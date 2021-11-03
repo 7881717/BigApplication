@@ -83,17 +83,17 @@
     </style>
 
 
-    <style name="MyButtonStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">55dp</item>
-        <item name="android:layout_gravity">center</item>
+    <style name="MyButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton.BigButton">
+        <item name="android:layout_height">40dp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/button_text</item>
-        <item name="cornerRadius">8dp</item>
-        <item name="layout_constraintStart_toStartOf">parent</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
-        <item name="strokeWidth">2dp</item>
-        <item name="strokeColor">@color/orange</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="materialThemeOverlay">@style/WhiteButtonThemeOverlay</item>
+
+    </style>
+
+    <style name="WhiteButtonThemeOverlay">
+        <!-- For filled buttons, your theme's colorPrimary provides the default background color of the component -->
+        <item name="colorPrimary">@color/white</item>
     </style>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.bigapplication.ui.logged
 
 import android.content.Intent
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bigapplication.R
@@ -19,6 +20,7 @@ class LoggedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoggedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
 
         // avatar rounding
         Glide.with(binding.imageViewProfileImage)
