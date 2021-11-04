@@ -82,13 +82,11 @@
         <item name="strokeColor">@color/orange</item>
     </style>
 
-
     <style name="MyButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton.BigButton">
         <item name="android:layout_height">40dp</item>
         <item name="android:textColor">@color/black</item>
         <item name="strokeColor">@color/white</item>
         <item name="materialThemeOverlay">@style/WhiteButtonThemeOverlay</item>
-
     </style>
 
     <style name="WhiteButtonThemeOverlay">
