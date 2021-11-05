@@ -18,7 +18,9 @@ import android.util.Log
 import android.widget.Toast
 
 import android.widget.Toast.LENGTH_SHORT
+
 import com.bigapplication.utils.Events
+
 
 
 //todo I replaced activity to AppCompatActivity
@@ -96,6 +98,9 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         //Настраиваем отображение поля для ввода текста в открытом диалоге:
         //fixme use view binding
+
+        val newIdentity = biggestIdentity() + 1
+
         val newName = promptsView.findViewById<View>(R.id.editTextName) as EditText
         val newSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
         val newCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
@@ -109,6 +114,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
             ) { dialog, id -> //Вводим текст и отображаем в строке ввода на основном экране:
                 viewModel.addItem(
                     Contact(
+                        newIdentity,
                         newName.text.toString(),
                         newSurname.text.toString(),
                         newCareer.text.toString(),
@@ -126,6 +132,20 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
         //и отображаем его:
         alertDialog.show()
     }
+
+    private fun biggestIdentity(): Int {
+        val contacts: MutableList<Contact>? = viewModel.contactsListLiveData.value
+        var max = 0
+        if (contacts != null) {
+            for (contact in contacts) {
+                if (contact.identity > max) {
+                    max = contact.identity
+                }
+            }
+        }
+        return max
+    }
+
 
     private fun initRecycler() {
         binding.recyclerViewContacts.layoutManager = LinearLayoutManager(
@@ -146,3 +166,4 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
         viewModel.removeItemAt(position)
     }
 }
+

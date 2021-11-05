@@ -16,11 +16,12 @@ class ContactsViewModel : ViewModel() {
         eventsLiveData.value = Events.LOADING
         if (contactsListLiveData.value?.isNullOrEmpty() == true) {
             contactsListLiveData.value?.apply {
-                add(Contact("Emma", "Wilson", "nice girl", R.drawable.emma))
-                add(Contact("Ann", "Lace", "ordinary girl", R.drawable.lavery))
-                add(Contact("Lillie", "Watts", "pretty woman", R.drawable.lillie))
+                add(Contact(0,"Emma", "Wilson", "nice girl", R.drawable.emma))
+                add(Contact(1,"Ann", "Lace", "ordinary girl", R.drawable.lavery))
+                add(Contact(2,"Lillie", "Watts", "pretty woman", R.drawable.lillie))
                 add(
                     Contact(
+                        3,
                         "Columbia",
                         ", the country of",
                         "best country",
