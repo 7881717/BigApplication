@@ -102,7 +102,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         val newID = biggestIdentity()
 
-        println("new ID = " + newID)
+        println("TRACER>>>>>>> new ID = $newID")
         val newName = promptsView.findViewById<View>(R.id.editTextName) as EditText
         val newSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
         val newCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
@@ -125,7 +125,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
                 )
             }
             .setNegativeButton(
-                "Отмена"
+                "CANCEL"
             ) { dialog, id -> dialog.cancel() }
 
         //Создаем AlertDialog:
@@ -160,7 +160,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
     }
 
     override fun removeContact(position: Int) {
-        println("removed = " + viewModel.contactsListLiveData.value!![position].iD)
+        println("TRACER>>>>>>> removed = " + viewModel.contactsListLiveData.value!![position].iD)
         viewModel.removeItemAt(position)
     }
 }
