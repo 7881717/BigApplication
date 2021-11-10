@@ -9,6 +9,8 @@ import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import com.bigapplication.ui.contacts.adapter.viewholder.PersonViewHolder
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.DiffUtil.DiffResult
+import com.bigapplication.utils.tracing
+import java.lang.Exception
 
 
 class ContactsAdapter internal constructor(
@@ -28,7 +30,11 @@ class ContactsAdapter internal constructor(
     }
 
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, position: Int) {
+
+        tracing("${Exception().stackTrace[0]} position = $position")
+
         personViewHolder.bindTo(contacts[position])
+
     }
 
     override fun getItemCount(): Int {

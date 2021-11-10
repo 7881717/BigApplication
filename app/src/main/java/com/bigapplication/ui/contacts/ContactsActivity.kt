@@ -21,7 +21,8 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 
 import com.bigapplication.utils.Events
-
+import com.bigapplication.utils.tracing
+import java.lang.Exception
 
 
 //todo I replaced activity to AppCompatActivity
@@ -67,7 +68,9 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
                 }
                 Events.LOADING -> {
                     //todo show ProgressBar
-                    Log.d("Progress bar", "Progress bar")
+
+                    tracing("${Exception().stackTrace[0]} Progress bar")
+
                 }
                 Events.INTERNET_ERROR -> {
                     val toast = Toast.makeText(applicationContext, "INTERNET ERROR", LENGTH_SHORT)
@@ -102,7 +105,8 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         val newID = biggestIdentity()
 
-        println("TRACER>>>>>>> new ID = $newID")
+        tracing("${Exception().stackTrace[0]} new ID = $newID")
+
         val newName = promptsView.findViewById<View>(R.id.editTextName) as EditText
         val newSurname = promptsView.findViewById<View>(R.id.editTextSurname) as EditText
         val newCareer = promptsView.findViewById<View>(R.id.editTextCareer) as EditText
@@ -160,7 +164,9 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
     }
 
     override fun removeContact(position: Int) {
-        println("TRACER>>>>>>> removed = " + viewModel.contactsListLiveData.value!![position].iD)
+
+        tracing("${Exception().stackTrace[0]} removed = " + viewModel.contactsListLiveData.value!![position].iD)
+
         viewModel.removeItemAt(position)
     }
 }
