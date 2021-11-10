@@ -1,6 +1,11 @@
 package com.bigapplication.utils
 
+import android.util.Log
+
 fun tracing(tracingString: String) {
-    println(tracingString)
+    Log.d("", tracingString)
 }
+
+
+
 
