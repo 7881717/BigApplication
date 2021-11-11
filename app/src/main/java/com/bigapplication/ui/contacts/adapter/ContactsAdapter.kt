@@ -20,7 +20,7 @@ class ContactsAdapter internal constructor(
     RecyclerView.Adapter<PersonViewHolder>() {
 
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): PersonViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): PersonViewHolder {
         val binding = ItemBinding.inflate(
             LayoutInflater.from(viewGroup.context), viewGroup, false
         )

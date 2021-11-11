@@ -2,7 +2,6 @@ package com.bigapplication.ui.contacts
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
@@ -14,12 +13,8 @@ import com.bigapplication.databinding.ActivityContactsBinding
 import com.bigapplication.model.Contact
 import com.bigapplication.ui.contacts.adapter.ContactsAdapter
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
-
-
 import android.widget.Toast
-
 import android.widget.Toast.LENGTH_SHORT
-
 import com.bigapplication.utils.Events
 import com.bigapplication.utils.tracing
 import java.lang.Exception
