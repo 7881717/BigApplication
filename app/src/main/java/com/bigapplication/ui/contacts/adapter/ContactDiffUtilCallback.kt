@@ -24,9 +24,9 @@ class ContactDiffUtilCallback(
         val oldContact: Contact = oldList[oldItemPosition]
         val newContact: Contact = newList[newItemPosition]
 
-        tracing("${Exception().stackTrace[0]} iD: ${oldContact.iD}")
+        tracing("${Exception().stackTrace[0]} iD: ${oldContact._iD}")
 
-        return oldContact.iD == newContact.iD
+        return oldContact._iD == newContact._iD
 //        return oldUser.id == newUser.id
     }
 
@@ -35,7 +35,7 @@ class ContactDiffUtilCallback(
         val oldContact: Contact = oldList[oldItemPosition]
         val newContact: Contact = newList[newItemPosition]
 
-        tracing("${Exception().stackTrace[0]} iD: ${oldContact.iD} CONTENTS: $oldContact")
+        tracing("${Exception().stackTrace[0]} iD: ${oldContact._iD} CONTENTS: $oldContact")
 
         return oldContact == newContact
     }

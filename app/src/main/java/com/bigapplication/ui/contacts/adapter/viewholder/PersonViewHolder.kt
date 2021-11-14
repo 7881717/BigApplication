@@ -5,7 +5,6 @@ import com.bigapplication.databinding.ItemBinding
 import com.bigapplication.model.Contact
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import com.bigapplication.utils.ext.loadImage
-import com.bumptech.glide.Glide
 
 class PersonViewHolder internal constructor(
     private val binding: ItemBinding,
@@ -21,7 +20,7 @@ class PersonViewHolder internal constructor(
 //      Glide except this: personPhoto.setImageResource(persons[i].photoId)
 
 
-        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$absoluteAdapterPosition", contact.photoId)
+        binding.personPhoto.loadImage("https://i.pravatar.cc/300?img=$absoluteAdapterPosition", contact._photoId)
 
         setListeners()
     }

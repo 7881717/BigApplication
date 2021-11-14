@@ -118,8 +118,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
                         newID,
                         newName.text.toString(),
                         newSurname.text.toString(),
-                        newCareer.text.toString(),
-                        R.drawable.brazilia
+                        newCareer.text.toString()
                     )
                 )
             }
@@ -132,11 +131,14 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         //и отображаем его:
         alertDialog.show()
+
+
+
     }
 
     private fun biggestIdentity(): Int {
         var newID = 0
-        val new = viewModel.contactsListLiveData.value?.maxOf { it.iD }?.plus(1)
+        val new = viewModel.contactsListLiveData.value?.maxOf { it._iD }?.plus(1)
         if (new != null) {
             newID = new
         }
@@ -160,7 +162,7 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
     override fun removeContact(position: Int) {
 
-        tracing("${Exception().stackTrace[0]} removed = " + viewModel.contactsListLiveData.value!![position].iD)
+        tracing("${Exception().stackTrace[0]} removed = " + viewModel.contactsListLiveData.value!![position]._iD)
 
         viewModel.removeItemAt(position)
     }

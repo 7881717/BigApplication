@@ -31,7 +31,7 @@ class ContactsAdapter internal constructor(
 
     override fun onBindViewHolder(personViewHolder: PersonViewHolder, position: Int) {
 
-        tracing("${Exception().stackTrace[0]} position = $position")
+        tracing("${Exception().stackTrace[0]} position = $position", ">>>>")
 
         personViewHolder.bindTo(contacts[position])
 
