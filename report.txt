@@ -1,4 +1,4 @@
-за вчера и сегодня потратил `2 часa`
-стал учить setters-getters по метаниту
+за вчера и сегодня потратил `4 часa`
+продолжил учить setters-getters
 код тут: https://github.com/7881717/BigApplication/tree/development
 план пройти ревью менторов
