@@ -2,7 +2,6 @@ package com.bigapplication.model
 
 import com.bigapplication.R
 
-//fixme user data class!
 data class Contact constructor(
     var _iD: Int,
     var _name: String = "John",
@@ -12,30 +11,23 @@ data class Contact constructor(
 ) {
     var name = _name
         set(value) {
-            field = if (value.length > 2)
-                value+"!!!"
+            field = if (value != "")
+                value
             else {
                 "John"
             }
         }
     var surname = _surname
-        set(value) {
-            if (!value.isNullOrBlank()) field = value+"!!!"
-        }
     var career = _career
 
     init {
-        name = if (_name.isNotEmpty())
-            _name
-        else {
-            "John"
-        }
-        surname = if (_surname.isNotBlank())
+        name = _name
+        surname = if (_surname != "")
             _surname
         else {
             "Johnson"
         }
-        career = if (!_career.isNullOrEmpty())
+        career = if (_career != "")
             _career
         else {
             "trainee"
