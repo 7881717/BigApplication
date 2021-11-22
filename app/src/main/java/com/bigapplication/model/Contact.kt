@@ -8,7 +8,7 @@ data class Contact constructor(
     var _surname: String = "Johnson",
     var _career: String = "trainee",
     var _photoId: Int = R.drawable.brazilia
-) {
+): Any() {
     var name = _name
         set(value) {
             field = if (value != "")
