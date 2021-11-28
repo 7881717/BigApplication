@@ -33,8 +33,6 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
 
         viewModel = ViewModelProvider(this).get(ContactsViewModel::class.java)
 
-        Main.main(arrayOf("1"))
-
         initRecycler()
         setObservers()
         setListeners()
