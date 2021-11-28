@@ -15,6 +15,7 @@ import com.bigapplication.ui.contacts.adapter.ContactsAdapter
 import com.bigapplication.ui.contacts.adapter.listeners.IContactClickListener
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import com.bigapplication.Main
 import com.bigapplication.utils.Events
 import com.bigapplication.utils.tracing
 import java.lang.Exception
@@ -31,6 +32,8 @@ class ContactsActivity : AppCompatActivity(), IContactClickListener {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this).get(ContactsViewModel::class.java)
+
+        Main.main(arrayOf("1"))
 
         initRecycler()
         setObservers()
